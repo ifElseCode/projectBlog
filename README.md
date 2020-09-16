@@ -2,7 +2,7 @@
 An if-else coding project.
 
 # How to Clone this Repository
-Follow these steps to get the code inside this repo onto your local working area (computer).
+Follow these steps to get the code inside this repo onto your local working area (computer). You can also watch (this)[https://www.youtube.com/watch?v=pbPE4Dodn3o] YouTube video which takes you through these six steps.
 
 ## 1. Navigate to Project Location on PC
 On your computer, find a sensible place to save the project code once you've cloned it. If you're unsure where to do this, create a folder titled "projects" on your desktop and open this folder. When you clone the remote repository, Git will create a folder inside your projects folder, so there is no need to create another folder for this.
