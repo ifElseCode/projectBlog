@@ -7,8 +7,16 @@
 		<title>ifElseCode</title>
 	</head>
 	<body>
-		<h1>This is the main-layout</h1>
-		<%-body%>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/blogs">Blogs</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</nav>
+		<%- body %>
+
 		<script src="/js/main.js"></script>
 	</body>
 </html>
