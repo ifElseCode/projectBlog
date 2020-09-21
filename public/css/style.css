@@ -1,0 +1,11 @@
+.container {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    height: 100%;
+    background-color:red;
+    border: 1px solid black;
+    padding: 3rem;
+    box-sizing: border-box;
+}
