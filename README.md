@@ -23,7 +23,7 @@ In the folder you created (called projects, in the suggestion we gave), you shou
 You now have a local clone of the remote repo. Changing the code that you've cloned won't effect the remote repo unless you push to it. But be careful when doing this, as you should run any major changes by your team members before changing the remote repo.
 
 # How to Run projectBlog
-Follow these steps to ensure you have all the correct packages/modules installed. You can also watch [this video]() to see what to do in action.
+Follow these steps to ensure you have all the correct packages/modules installed. You can also watch [this video](https://youtu.be/tiJ27GdqJ7Y) to see what to do in action.
 
 ## 1. Make Sure You Have Cloned projectBlog to Your Computer
 If you haven't yet cloned the projectBlog repo to your computer, follow the steps listed under "How to Clone This Repository". To make sure this has been done correctly, compare what you see in your projectBlog folder with what you see in this remote repo.
