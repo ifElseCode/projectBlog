@@ -12,10 +12,6 @@ app.set("layout", "layouts/main-layout");
 app.use(expressLayouts);
 app.use(express.static("./public"));
 
-
-
-
-
 // Routes
 // HOME
 app.get("/", (req, res) => res.render("blog"));
