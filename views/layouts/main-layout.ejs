@@ -2,24 +2,28 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="css/reset.css" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
 	<title>ifElseCode</title>
 </head>
 
 <body>
-	<nav>
+	<nav class="main-nav"> <!-- this nav will be common to all pages and will remain on the left -->
+		<img src="https://images.unsplash.com/photo-1505739998589-00fc191ce01d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt=""> <!-- image of man throwing the camera -->
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="/about">About</a></li>
 			<li><a href="/blogs">Blogs</a></li>
 			<li><a href="/contact">Contact</a></li>
-			<li><a href="/admin">Admin</a></li>
 		</ul>
 	</nav>
-	<hr>
-	<%- body %>
+	<div>
+		<%- body %>
+	</div>
+	
+  
 
 	<script src="/js/main.js"></script>
 </body>
