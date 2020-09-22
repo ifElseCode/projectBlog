@@ -10,9 +10,15 @@ app.set("view engine", "ejs");
 app.set("layout", "layouts/main-layout");
 
 app.use(expressLayouts);
-app.use(express.static("public"));
+app.use(express.static("./public"));
 
 
+
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> frontEnd
 
 // Routes
 // HOME
@@ -33,4 +39,8 @@ app.get("/admin", (req, res) => res.render("admin", { layout: "./layouts/admin-l
 // 404 error
 app.use((req, res) => res.render("404"));
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> frontEnd
 app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));

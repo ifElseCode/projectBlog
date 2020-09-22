@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container {
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -9,3 +10,33 @@
     padding: 3rem;
     box-sizing: border-box;
 }
+=======
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // This defines what 1rem is, try to keep everything in rem
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    padding: 2.5rem;
+    
+}
+
+
+.container {
+    border: 1px solid black;
+    height: 100%;
+}
+
+>>>>>>> frontEnd
