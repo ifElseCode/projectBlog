@@ -35,5 +35,4 @@ app.get("/admin", (req, res) => res.render("admin", { layout: "./layouts/admin-l
 // 404 error
 app.use((req, res) => res.render("404"));
 
-
 app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
