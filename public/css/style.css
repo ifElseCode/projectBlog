@@ -17,12 +17,19 @@ body {
     font-weight: 400;
     line-height: 1.7;
     padding: 2.5rem;
-    
+    display: flex;
 }
 
+.main-nav {
+    background: #222;
+    color: white;
+}
+
+.main-nav img {
+    width: 150px;
+}
 
 .container {
     border: 1px solid black;
     height: 100%;
 }
-
