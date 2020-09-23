@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const mongoose = require("mongoose");
+require("dotenv/config");
 const PORT = 3000;
 
 const expressLayouts = require("express-ejs-layouts");
@@ -11,6 +13,15 @@ app.set("layout", "layouts/main-layout");
 
 app.use(expressLayouts);
 app.use(express.static("./public"));
+
+// Connect to Database
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+  .then(result => {
+    console.log("Connected to Database");
+    // we'll listen for requests only once we've connected to the DB
+    app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
+  })
+  .catch(err => console.log(err));
 
 // Routes
 // HOME
@@ -30,5 +41,3 @@ app.get("/admin", (req, res) => res.render("admin", { layout: "./layouts/admin-l
 
 // 404 error
 app.use((req, res) => res.render("404"));
-
-app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
