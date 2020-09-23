@@ -10,8 +10,10 @@
 </head>
 
 <body>
-	<nav class="main-nav"> <!-- this nav will be common to all pages and will remain on the left -->
-		<img src="https://images.unsplash.com/photo-1505739998589-00fc191ce01d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt=""> <!-- image of man throwing the camera -->
+	<!-- Left Section -->
+	<nav class="main-nav">
+		<img src="https://images.unsplash.com/photo-1505739998589-00fc191ce01d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+			alt="">
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="/about">About</a></li>
@@ -19,11 +21,10 @@
 			<li><a href="/contact">Contact</a></li>
 		</ul>
 	</nav>
-	<div>
+	<!-- Right Section -->
+	<section class="main-body">
 		<%- body %>
-	</div>
-	
-  
+	</section>
 
 	<script src="/js/main.js"></script>
 </body>
