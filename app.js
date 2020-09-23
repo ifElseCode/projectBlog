@@ -7,6 +7,7 @@ const PORT = 3000;
 const expressLayouts = require("express-ejs-layouts");
 const aboutRouter = require("./routes/aboutRouter");
 const blogRouter = require("./routes/blogRouter");
+const authRouter = require("./routes/authRouter");
 
 app.set("view engine", "ejs");
 app.set("layout", "layouts/main-layout");
@@ -26,6 +27,9 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
 // Routes
 // HOME
 app.get("/", (req, res) => res.render("blog"));
+
+// AUTHENTICATION
+app.use(authRouter);
 
 // ABOUT
 app.use("/about", aboutRouter);

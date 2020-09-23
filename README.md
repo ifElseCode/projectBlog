@@ -42,3 +42,14 @@ To ensure that everything installed correctly, type `npm run dev` in your termin
 
 ## 6. Make Changes to projectBlog
 To make sure that projectBlog is working as it should, make some changes to a file and save these. Refresh your browser and you will see the changes that you made. If this doesn't work, you may have to go back to step 4.
+
+# Git Workflow
+
+## 1. Commit changes to my branch and push
+## 2. Checkout master and then pull master
+## 3. Checkout my branch, merge master into my branch and resolve any conflicts. Then push my branch again
+## 4. Open a pull request between my branch and master (there should be no conflicts)
+## 5. Checkout staging, then pull staging
+## 6. Merge my branch into staging
+## 7. Push staging
+## 8. If Overlords are happy with staging, then complete the pull request between my branch and master
