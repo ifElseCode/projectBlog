@@ -1,35 +1,34 @@
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
 html {
     /* This defines what 1rem is, try to keep everything in rem */
     font-size: 62.5%;
 }
 
 body {
-    box-sizing: border-box;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     line-height: 1.7;
-    padding: 2.5rem;
-    display: flex;
+    background-color: #141E2A;
+    color: #191B1A;
+    padding: 6rem 9rem;
 }
 
 .main-nav {
-    background: #222;
-    color: white;
+    background-color: #FFF;
+    position: fixed;
+    width: 350px;
+    height: 550px;
+    border-radius: 2rem;
+    overflow: hidden;
 }
 
-.main-nav img {
-    width: 150px;
+.main-top {
+    height: 50%;
+    width: 100%;
+    background-color: #8FA0C7;
 }
 
-.container {
-    border: 1px solid black;
-    height: 100%;
+.main-body {
+    background-color: #FFF;
+    margin-left: 380px;
+    border-radius: 2rem;
 }
