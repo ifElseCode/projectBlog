@@ -4,33 +4,31 @@ html {
 }
 
 body {
-    box-sizing: border-box;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     line-height: 1.7;
+    background-color: #141E2A;
+    color: #191B1A;
     padding: 6rem 9rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-.container {
-    border: 1px solid black;
-    height: 100%;
 }
 
 .main-nav {
-    background: #222;
-    color: white;
-    flex: 0.236;
-    position: sticky;
-    top: 6rem;
+    background-color: #FFF;
+    position: fixed;
+    width: 350px;
+    height: 550px;
+    border-radius: 2rem;
+    overflow: hidden;
 }
 
-.main-nav img {
-    width: 150px;
+.main-top {
+    height: 50%;
+    width: 100%;
+    background-color: #8FA0C7;
 }
 
 .main-body {
-    background-color: grey;
-    flex: 0.744;
+    background-color: #FFF;
+    margin-left: 380px;
+    border-radius: 2rem;
 }
