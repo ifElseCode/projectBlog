@@ -2,9 +2,10 @@ body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     line-height: 1.7;
+    
 }
 
-.dashboard--sidebar {
+.dashboard-sidebar {
     width: 300px;
     height: 100%;
     position: fixed;
@@ -13,14 +14,14 @@ body {
 }
 
 
-.dashboard--sidebar--user {
+.dashboard-sidebar--user {
     padding: 1.25rem;
     display: flex;
     align-items: center;
     background-color: #2F477B;
 }
 
-.dashboard--sidebar--user__initials {
+.dashboard-sidebar--initials {
     background-color: #8FA0C7;
     width: 65px;
     height: 65px;
@@ -33,41 +34,41 @@ body {
     margin-right: 1.25rem;
 }
 
-.dashboard--sidebar--user__info{
+.dashboard-sidebar--info {
     letter-spacing: .1rem;
 }
 
-.dashboard--sidebar--user__info > div:nth-child(1) {
+.dashboard-sidebar--info > div:nth-child(1) {
     font-size: 1.2rem;
 }
 
-.dashboard--sidebar--user__info > div:nth-child(2) {
+.dashboard-sidebar--info > div:nth-child(2) {
     color: #8FA0C7;
     font-weight: lighter;
 }
 
-.dashboard--sidebar--options {
+.dashboard-sidebar--nav {
     font-size: 1.25rem;
     letter-spacing: .1rem;
 }
 
-.dashboard--sidebar--options > li > a {
-    display: block;
+.dashboard-sidebar--nav  > a {
+    display: flex;
+    align-items: center;
     padding: 1rem 1.5rem;
-    transition: all .4s ease-in-out;
+    transition: background .4s ease-in-out;
 }
 
-.dashboard--sidebar--options > li > a:hover{
-    color: #FFF;
+.dashboard-sidebar--nav > a:hover{
     background-color: #2F477B;
-    padding-left: 1.75rem;
 }
 
-.dashboard--sidebar--options > li > a > i{
-    padding-right: 1rem;
+.dashboard-sidebar--nav > a > i {
+    width: 30px;
+    margin-right: 1rem;
 }
 
-.dashboard--content {
+.dashboard-content {
     margin-left: 300px;
     padding: 1rem;
 }
