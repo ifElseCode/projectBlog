@@ -23,4 +23,6 @@ body {
     background-color: #FFF;
     margin-left: 380px;
     border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
 }
