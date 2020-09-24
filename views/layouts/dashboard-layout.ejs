@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/dashboard-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <title>ifElseCode</title>
+</head>
+
+<body>
+  <div class="dashboard--sidebar">
+    <div class="dashboard--sidebar--user">
+      <div class="dashboard--sidebar--user__initials">
+        UH
+      </div>
+      <div class="dashboard--sidebar--user__info">
+        <div>Username Here</div>
+        <div>Admin</div>
+      </div>
+    </div>
+    <ul class="dashboard--sidebar--options">
+      <li>
+        <a href="">
+          <i class="fa fa-home" aria-hidden="true"></i>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fa fa-users" aria-hidden="true"></i>
+          Team
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          Blogs
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="dashboard--content">
+    <%- body %>
+  </div>
+</body>
+
+</html>

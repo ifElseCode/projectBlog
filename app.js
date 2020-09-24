@@ -41,7 +41,7 @@ app.use("/blogs", blogRouter);
 app.get("/contact", (req, res) => res.render("contact"));
 
 // ADMIN
-app.get("/admin", (req, res) => res.render("admin", { layout: "./layouts/admin-layout" }));
+app.get("/dashboard", (req, res) => res.render("dashboard", { layout: "./layouts/dashboard-layout" }));
 
 // 404 error
 app.use((req, res) => res.render("404"));
