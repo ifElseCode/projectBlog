@@ -45,11 +45,24 @@ To make sure that projectBlog is working as it should, make some changes to a fi
 
 # Git Workflow
 
-## 1. Commit changes to my branch and push
-## 2. Checkout master and then pull master
-## 3. Checkout my branch, merge master into my branch and resolve any conflicts. Then push my branch again
-## 4. Open a pull request between my branch and master (there should be no conflicts)
-## 5. Checkout staging, then pull staging
-## 6. Merge my branch into staging
-## 7. Push staging
-## 8. If Overlords are happy with staging, then complete the pull request between my branch and master
+## 1. Pull master branch
+To make sure you're working with the latest code, ensure you've got the latest code in the master branch. To do this, type `git pull origin master` while on the master branch. Only then should you create you own branch.
+
+## 2. Create Your Branch
+After pulling the latest code, you'll want to branch off master. To do so, type `git checkout -b feature/myBranch`. That will create a branch titled "feature/myBranch" and will checkout it out for you. Now you're ready to make changes to the code without effecting the master.
+
+## 3. Commit changes to my branch and push
+
+## 4. Checkout master and then pull master
+
+## 5. Checkout my branch, merge master into my branch and resolve any conflicts. Then push my branch again
+
+## 6. Open a pull request between my branch and master (there should be no conflicts)
+
+## 7. Checkout staging, then pull staging
+
+## 8. Merge my branch into staging
+
+## 9. Push staging
+
+## 10. If Overlords are happy with staging, then complete the pull request between my branch and master
