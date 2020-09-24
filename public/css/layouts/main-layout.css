@@ -1,0 +1,26 @@
+body {
+    background-color: #F2F0F2;
+    color: #191B1A;
+    padding: 6rem 9rem;
+}
+
+.main-nav {
+    background-color: var(--bg-color);
+    position: fixed;
+    width: 350px;
+    height: 550px;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.main-top {
+    height: 50%;
+    width: 100%;
+    background-color: #8FA0C7;
+}
+
+.main-body {
+    background-color: #FFF;
+    margin-left: 380px;
+    border-radius: 2rem;
+}
