@@ -9,11 +9,14 @@ const aboutRouter = require("./routes/aboutRouter");
 const blogRouter = require("./routes/blogRouter");
 const authRouter = require("./routes/authRouter");
 
+// Middleware
+app.use(expressLayouts);
+app.use(express.static("public"));
+app.use(express.json());
+
+// View Engines
 app.set("view engine", "ejs");
 app.set("layout", "layouts/main-layout");
-
-app.use(expressLayouts);
-app.use(express.static("./public"));
 
 // Connect to Database
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
@@ -41,7 +44,7 @@ app.use("/blogs", blogRouter);
 app.get("/contact", (req, res) => res.render("contact"));
 
 // ADMIN
-app.get("/admin", (req, res) => res.render("admin", { layout: "./layouts/admin-layout" }));
+app.get("/dashboard", (req, res) => res.render("dashboard", { layout: "./layouts/dashboard-layout" }));
 
 // 404 error
 app.use((req, res) => res.render("404"));
