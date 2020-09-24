@@ -8,6 +8,7 @@ const expressLayouts = require("express-ejs-layouts");
 const aboutRouter = require("./routes/aboutRouter");
 const blogRouter = require("./routes/blogRouter");
 const authRouter = require("./routes/authRouter");
+const dashboardRouter = require("./routes/dashboardRouter");
 
 // Middleware
 app.use(expressLayouts);
@@ -43,8 +44,8 @@ app.use("/blogs", blogRouter);
 // CONTACT
 app.get("/contact", (req, res) => res.render("contact"));
 
-// ADMIN
-app.get("/dashboard", (req, res) => res.render("dashboard", { layout: "./layouts/dashboard-layout" }));
+// DASHBOARD
+app.use("/dashboard", dashboardRouter);
 
 // 404 error
 app.use((req, res) => res.render("404"));
