@@ -44,7 +44,7 @@ To ensure that everything installed correctly, type `npm run dev` in your termin
 To make sure that projectBlog is working as it should, make some changes to a file and save these. Refresh your browser and you will see the changes that you made. If this doesn't work, you may have to go back to step 4.
 
 # Git Workflow
-Note: everything within angled brackets (eg, `<filename>`) refers to text that you will change depending on the context. They serve as a placeholder. In this tutorial, the name **feature/myBranch** is a generic term we have given for the sake of this tutorial. You will want to check with your team what system you have in place for naming your branches. To see this in action, watch [this video]().
+Note: everything within angled brackets (eg, `<filename>`) refers to text that you will change depending on the context. They serve as a placeholder. In this tutorial, the name **feature/myBranch** is a generic term we have given for the sake of this tutorial. You will want to check with your team what system you have in place for naming your branches. To see this workflow in action, watch [this video]().
 
 ## 1. Pull Master Branch
 To make sure you're working with the latest code, ensure you've got the latest code in the **master** branch. To do this, type `git pull origin master` while on the **master** branch. Only then should you create you own branch.
@@ -64,7 +64,7 @@ Once you've done that, *push* **feature/myBranch** to GitHub by typing `git push
 ## 4. Checkout and Pull Master
 Move from **feature/myBranch** and checkout the **master** branch by typing `git checkout master`. Once you're on the **master branch**, *pull* the latest master branch from GitHub by typing `git pull origin master`. Since you started working on **feature/myBranch**, there may have been some recent changes to the **master** branch.
 
-## 5. Checkout my Branch, Merge Master Branch Into my Branch and Push my Branch Again
+## 5. Checkout **feature/myBranch**, Merge Master Branch Into **feature/myBranch** and *Push* **feature/myBranch** Again
 Now that you have the latest version of the **master branch**, you'll want to *merge* it into **feature/myBranch**, to see if there are any conflicts.
 
 *Checkout* your branch by typing `git checkout feature/myBranch`.
