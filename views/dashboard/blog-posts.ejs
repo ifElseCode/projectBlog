@@ -1,1 +1,26 @@
-<h1>Dashboard: Blog Posts</h1>
+<h1 class="blog-posts--title">
+	Blog Post <span>All blog post in the database</span>
+</h1>
+<table class="blog-posts--table">
+	<tr>
+		<th>Date</th>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Actions</th>
+	</tr>
+	<% for(var i=0; i<30; i++) {%>
+	<tr>
+		<td>12 July 2020</td>
+		<td>Do you even react bro</td>
+		<td>DeNoob</td>
+		<td class="blog-posts--actions">
+			<a href="" class="blog-posts--button blog-posts--button__green"
+				>Edit</a
+			>
+			<form class="blog-posts--button blog-posts--button__red">
+				Delete
+			</form>
+		</td>
+	</tr>
+	<% } %>
+</table>

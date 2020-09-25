@@ -1,67 +1,68 @@
 .dashboard-sidebar {
-    width: 300px;
-    height: 100%;
-    position: fixed;
-    background-color: #141E2A;
-    color: white;
+	width: 300px;
+	height: 100%;
+	position: fixed;
+	background-color: #141e2a;
+	color: white;
 }
 
-
 .dashboard-sidebar--user {
-    padding: 1.25rem;
-    display: flex;
-    align-items: center;
-    background-color: #2F477B;
+	padding: 1.5rem;
+	display: flex;
+	align-items: center;
+	background-color: #2f477b;
 }
 
 .dashboard-sidebar--initials {
-    background-color: #8FA0C7;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.175rem;
-    letter-spacing: .1rem;
-    margin-right: 1.25rem;
+	background-color: #8fa0c7;
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.75rem;
+	letter-spacing: 0.1rem;
+	margin-right: 1.25rem;
 }
 
 .dashboard-sidebar--info {
-    letter-spacing: .1rem;
+	letter-spacing: 0.1rem;
 }
 
 .dashboard-sidebar--info > div:nth-child(1) {
-    font-size: 1.2rem;
+	font-size: 1.5rem;
 }
 
 .dashboard-sidebar--info > div:nth-child(2) {
-    color: #8FA0C7;
-    font-weight: lighter;
+	color: #8fa0c7;
+	font-weight: lighter;
+	font-size: 1.25rem;
 }
 
 .dashboard-sidebar--nav {
-    font-size: 1.25rem;
-    letter-spacing: .1rem;
+	font-size: 1.5rem;
+	letter-spacing: 0.1rem;
 }
 
-.dashboard-sidebar--nav  > a {
-    display: flex;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    transition: background .4s ease-in-out;
+.dashboard-sidebar--nav > a {
+	display: flex;
+	align-items: center;
+	padding: 1.5rem;
+	transition: background 0.4s ease-in-out;
 }
 
-.dashboard-sidebar--nav > a:hover{
-    background-color: #2F477B;
+.dashboard-sidebar--nav > a:hover {
+	background-color: #2f477b;
 }
 
 .dashboard-sidebar--nav > a > i {
-    width: 30px;
-    margin-right: 1rem;
+	width: 30px;
+	margin-right: 1rem;
 }
 
 .dashboard-content {
-    margin-left: 300px;
-    padding: 1rem;
+	margin-left: 300px;
+	padding: 1.5rem;
+	position: relative;
 }
