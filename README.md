@@ -44,18 +44,22 @@ To ensure that everything installed correctly, type `npm run dev` in your termin
 To make sure that projectBlog is working as it should, make some changes to a file and save these. Refresh your browser and you will see the changes that you made. If this doesn't work, you may have to go back to step 4.
 
 # Git Workflow
+Note, everything within angled brackets (eg, `<filename>`) refers to text that you will change depending on the context. They serve as a placeholder.
 
-## 1. Pull master branch
-To make sure you're working with the latest code, ensure you've got the latest code in the master branch. To do this, type `git pull origin master` while on the master branch. Only then should you create you own branch.
+## 1. Pull Master Branch
+To make sure you're working with the latest code, ensure you've got the latest code in the **master branch**. To do this, type `git pull origin master` while on the **master branch**. Only then should you create you own branch.
 
 ## 2. Create Your Branch
-After pulling the latest code, you'll want to branch off master. To do so, type `git checkout -b feature/myBranch`. That will create a branch titled "feature/myBranch" and will checkout it out for you. Now you're ready to make changes to the code without effecting the master.
+After pulling the latest code, you'll want to branch off master. To do so, type `git checkout -b feature/myBranch`. That will create a branch titled "feature/myBranch" and will checkout it out for you. Now you're ready to make changes to the code without effecting the master. (Of course, you'll want to name your branch something more descriptive than "myBranch". Speak to your team members about how best to do this).
 
-## 3. Commit changes to my branch and push
+## 3. Commit to My Branch and Push
+Once you're finished coding and ready to submit it, you'll need to add it to the staging area and then commit it to your repo before pushing it to GitHub. To add it to staging, you can either type `git add <filename>` to add a single file, or you can type `git add .` to add every modified file to the staging area. We'll use this latter command more often. Once you've added it to the staging area, you'll then make a commit to your branch. To do this, enter `git commit -m "<message describing the commit>"`. Make your commit message short but descriptive. Now your working tree is clean. Once you've done that, push your branch to GitHub by typing `git push origin <branch name>`.
 
-## 4. Checkout master and then pull master
+## 4. Checkout and Pull Master
+Move from your branch and checkout the **master branch** by typing `git checkout master`. Once you're on the **master branch**, pull the latest master branch from GitHub by typing `git pull origin master`. Since you started working on your branch, there may have been some recent changes to the **master branch**.
 
-## 5. Checkout my branch, merge master into my branch and resolve any conflicts. Then push my branch again
+## 5. Checkout my Branch, Merge Master Branch Into my Branch and Push my Branch Again
+
 
 ## 6. Open a pull request between my branch and master (there should be no conflicts)
 
