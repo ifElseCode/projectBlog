@@ -1,11 +1,11 @@
 html {
-    /* This defines what 1rem is, try to keep everything in rem */
-    font-size: 62.5%;
+	/* This defines what 1rem is, try to keep everything in rem */
+	font-size: 62.5%;
 }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	line-height: 1.7;
+	color: #171717;
 }
-

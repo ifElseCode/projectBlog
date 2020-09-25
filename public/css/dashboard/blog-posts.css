@@ -1,34 +1,50 @@
-.blog-posts--title {
-	font-size: 2.5rem;
-	letter-spacing: 0.1rem;
+.dashboard-blog-posts--header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	margin-bottom: 1.5rem;
 }
 
-.blog-posts--title > span {
-	font-size: 1.5rem;
+.dashboard-blog-posts--title {
+	font-size: 2.5rem;
+	letter-spacing: 0.1rem;
 }
 
-.blog-posts--table {
+.dashboard-blog-posts--title > span {
+	font-size: 1.5rem;
+	opacity: 0.8;
+}
+
+.dashboard-blog-posts--header > a {
+	padding: 1rem 1.5rem;
+	background-color: #2f477b;
+	color: #fff;
+	font-size: 1.5rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+.dashboard-blog-posts--table {
 	width: 100%;
 }
 
-.blog-posts--table th {
+.dashboard-blog-posts--table th {
 	font-weight: bold;
 	letter-spacing: 0.1rem;
 }
 
-.blog-posts--table th,
-.blog-posts--table td {
+.dashboard-blog-posts--table th,
+.dashboard-blog-posts--table td {
 	font-size: 1.25rem;
 	padding: 1rem;
 	width: 25%;
 }
 
-.blog-posts--table tr:nth-child(even) {
+.dashboard-blog-posts--table tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
 
-.blog-posts--table th {
+.dashboard-blog-posts--table th {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	text-align: left;
@@ -36,24 +52,24 @@
 	color: white;
 }
 
-.blog-posts--actions {
+.dashboard-blog-posts--actions {
 	display: flex;
 }
 
-.blog-posts--button {
+.dashboard-blog-posts--button {
 	padding: 0.5rem 2rem;
 	border-radius: 0.5rem;
 	cursor: pointer;
 }
 
-.blog-posts--button:nth-of-type(1) {
+.dashboard-blog-posts--button:nth-of-type(1) {
 	margin-right: 1rem;
 }
 
-.blog-posts--button__green {
+.dashboard-blog-posts--button__green {
 	background-color: #81c784;
 }
 
-.blog-posts--button__red {
+.dashboard-blog-posts--button__red {
 	background-color: #e57373;
 }
