@@ -1,9 +1,35 @@
 <form class="box" action="" method="POST">
-    <h1>Create Account</h1>
-    <input type="text" name="Username" placeholder="Username" required>
-    <input type="text" name="Email Address" placeholder="Email Address" required>
-    <input type="password" name="Password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-        required>
-    <input type="submit" value="Create Account">
+    <h1>Let's get you on board!</h1>
+    <div class="usernameContainer">
+        <input
+          class="username"
+          type="text" 
+          name="Username" 
+          placeholder="Username" 
+          required
+        /><i class="fas fa-user"></i>
+    </div>
+    <div class="emailContainer">
+        <input
+        class="email"
+        type="email" 
+        name="Email Address" 
+        placeholder="Email Address" 
+        required
+        /><i class="fas fa-at"></i>
+    </div>
+    <div class="passwordContainer">
+        <input
+        class="pass"
+        type="password" 
+        name="Password" 
+        placeholder="Password" 
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+        required
+        /><i class="fas fa-unlock-alt"></i>
+    </div>
+    <div>
+        <input type="submit" value="Create Account"/>    
+    </div>
 </form>
