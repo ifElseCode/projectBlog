@@ -1,9 +1,11 @@
-<form class="box" action="" method="POST">
+<form class="box">
     <h1>Create Account</h1>
-    <input type="text" name="Username" placeholder="Username" required>
-    <input type="text" name="Email Address" placeholder="Email Address" required>
-    <input type="password" name="Password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="text" name="email" placeholder="Email Address" required>
+    <input type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
         required>
     <input type="submit" value="Create Account">
 </form>
+
+<script src="/js/signup.js"></script>

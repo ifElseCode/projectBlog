@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
 require("dotenv/config");
+const cookieParser = require("cookie-parser");
 const PORT = 3000;
 
 const expressLayouts = require("express-ejs-layouts");
@@ -14,6 +15,7 @@ const dashboardRouter = require("./routes/dashboardRouter");
 app.use(expressLayouts);
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cookieParser());
 
 // View Engines
 app.set("view engine", "ejs");
