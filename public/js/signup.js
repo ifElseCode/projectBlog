@@ -1,15 +1,16 @@
 const form = document.querySelector("form");
+
 //query the DOM for invisible error divs
-const usernameErrors = document.querySelector("");
-const emailErrors = document.querySelector("");
-const passwordErrors = document.querySelector("");
+const usernameErrors = document.querySelector(".usernameErrors");
+const emailErrors = document.querySelector(".emailErrors");
+const passwordErrors = document.querySelector(".passwordErrors");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  
+
   usernameErrors.textContent = "";
-  emailError.textContent = "";
-  passwordError.textContent = "";
+  emailErrors.textContent = "";
+  passwordErrors.textContent = "";
 
   const username = form.username.value;
   const email = form.email.value;
@@ -25,8 +26,11 @@ form.addEventListener("submit", async (e) => {
     console.log(data);
     if (data.errors) {
       usernameErrors.textContent = data.errors.username;
-      emailError.textContent = data.errors.email;
-      passwordError.textContent = data.errors.password;
+      emailErrors.textContent = data.errors.email;
+      passwordErrors.textContent = data.errors.password;
+    }
+    if (data.user) {
+      location.assign("/");
     }
   }
   catch (err) {
