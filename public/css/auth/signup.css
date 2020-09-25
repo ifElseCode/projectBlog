@@ -27,6 +27,7 @@
   }
   
   .box input[type="text"],
+  .box input[type="email"],
   .box input[type="password"] {
     border: 0;
     background: none;
@@ -45,11 +46,16 @@
     margin-top: 0;
   }
   
+  .usernameContainer,
   .emailContainer,
   .passwordContainer {
     position: relative;
     display: flex;
     margin: 20px auto;
+  }
+
+  .emailContainer {
+    margin-top: 0;
   }
   
   .passwordContainer {
@@ -57,6 +63,7 @@
   }
   
   .box input[type="text"]:focus,
+  .box input[type="email"]:focus,
   .box input[type="password"]:focus {
     width: 375px;
     border-color: rgb(86, 199, 252);
@@ -86,15 +93,6 @@
     color: white;
   }
   
-  .error-message {
-    visibility: hidden;
-    text-align: center;
-    margin-top: 40px;
-    margin-left: 150px;
-    margin-right: 150px;
-    border: 2px solid red;
-  }
-  
   .fa-user {
     position: absolute;
     top: 50%;
@@ -108,4 +106,10 @@
     transform: translateY(-50%);
     left: 20px;
   }
-  
+
+  .fa-at {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+  }
