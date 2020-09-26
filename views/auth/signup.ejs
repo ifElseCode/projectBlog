@@ -1,35 +1,36 @@
-<form class="box" action="" method="POST">
+<form class="box">
     <h1>Let's get you on board!</h1>
     <div class="usernameContainer">
         <input
           class="username"
           type="text" 
-          name="Username" 
+          name="username" 
           placeholder="Username" 
-          required
         /><i class="fas fa-user"></i>
     </div>
+    <div class="usernameErrors"></div>
     <div class="emailContainer">
         <input
         class="email"
-        type="email" 
-        name="Email Address" 
+        type="text"
+        name="email" 
         placeholder="Email Address" 
-        required
         /><i class="fas fa-at"></i>
-    </div>
+    </div> <!--given this a type of "text", so the browser doesn't perform validation on email, that's being handled on the server as we interact with the database-->
+    <div class="emailErrors"></div>
     <div class="passwordContainer">
         <input
         class="pass"
         type="password" 
-        name="Password" 
-        placeholder="Password" 
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+        name="password" 
+        placeholder="Password"  
         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
-        required
         /><i class="fas fa-unlock-alt"></i>
     </div>
+    <div class="passwordErrors"></div>
     <div>
         <input type="submit" value="Create Account"/>    
     </div>
 </form>
+
+<script src="/js/signup.js"></script>
