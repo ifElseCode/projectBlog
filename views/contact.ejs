@@ -1,1 +1,61 @@
-<h1>Contact Us</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" text="text/css" href="contact.css">
+    <script src="https://kit.fontawesome.com/c22c606120.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+<div class="header__container">
+    <!--Heading for Contact Page. The header and Home Icon should be on one line spaced apart.-->
+    <div class="header__title">
+        <h1>ifElse Contact</h1>
+    </div>
+    <div class="header__home">
+        <a href="/"><i class="fas fa-home fa-3x"></i></a>
+    </div>
+</div>
+
+<hr>
+   
+<h2 class="header__two">Why not drop us a <span class="line">line</span>?</h2>
+
+<div class="contact__container">
+<!--Company contanct information, should have and Icon to represent each method of contact above the details. -->
+    <div class="contact__phone">
+<!--Company Phone Number / with mobile phone icon-->
+        <i class="fas fa-mobile-alt fa-2x">+07000000000</i>
+    </div>  
+    <div class="contact__email">
+    <!--Company Email Address / with envelope icon-->
+        <i class="fas fa-envelope-open-text fa-2x">hello@ifelsecode.uk</i>
+    </div>       
+    <div class="contact__hours">
+    <!--Company business hours / with clock icon-->
+        <i class="fas fa-clock fa-2x">Mon - Fri 09:00 - 18:00</i>
+    </div>
+    </div>
+    
+<main>
+<!--Form for client, blogger, to submit for getting support purposes-->
+<div class="container">
+    <form class="form" action="#" method="post">
+    <div>
+        <label><input class="form__name" type="text" name="yourName" placeholder="Your Name"></label>
+    </div>
+    <div class="form__email">
+        <label><input  type="text" name="email" placeholder="Your Email"></label>
+    </div>
+    <div class="form__message">
+        <textarea wrap="hard" name="YourMessage" placeholder="Your Message" rows="15" cols="80" required>
+                Your Message
+        </textarea> 
+        <input type="submit" value="send" name="send" class="form__message form--send">
+    </div>
+    </form>
+</div>
+</main>
+</body>
+</html>
