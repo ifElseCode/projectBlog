@@ -21,8 +21,33 @@ body {
 .main-body {
 	background-color: #fff;
 	margin-left: 380px;
+	margin-bottom: 5rem;
 	border-radius: 2rem;
 	position: relative;
 	overflow: hidden;
+}
+
+.main--footer {
+	margin-left: 380px;
+	height: 175px;
+	background-image: url('https://cdn.discordapp.com/attachments/752950996707311616/759534699512463400/unknown.png');
+	font-size: 1.5rem;
+	letter-spacing: 0.1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2rem;
+}
+
+.main--footer > ul {
+	display: flex;
+	justify-content: space-between;
+	width: 22.5%;
+	margin-bottom: 2rem;
+}
+
+.main--footer > div {
+	color: var(--grey);
 }
 
