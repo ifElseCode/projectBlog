@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/base/reset.css" />
+		<link rel="stylesheet" href="css/base/global.css" />
+		<link rel="stylesheet" href="css/helpers/variables.css" />
+		<link rel="stylesheet" href="css/layouts/main-layout.css" />
+		<link rel="stylesheet" href="css/auth/login.css" />
+		<link rel="stylesheet" href="css/auth/signup.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+			integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+			crossorigin="anonymous"
+		/>
+		<title>ifElseCode</title>
+	</head>
+	<body>
+		<!-- Left Section -->
+		<nav class="main-nav">
+			<div class="main-top"></div>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/blogs">Blogs</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li><a href="/login">Log In</a></li>
+				<li><a href="/signup">Sign Up</a></li>
+			</ul>
+		</nav>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/base/reset.css" />
-	<link rel="stylesheet" href="css/base/global.css">
-	<link rel="stylesheet" href="css/helpers/variables.css">
-	<link rel="stylesheet" href="css/layouts/main-layout.css">
-	<link rel="stylesheet" href="css/auth/login.css">
-	<link rel="stylesheet" href="css/auth/signup.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-		integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-		crossorigin="anonymous" />
-	<title>ifElseCode</title>
-</head>
+		<!-- Right Section -->
+		<section class="main-body"><%- body %></section>
 
-<body>
+		<footer class="main--footer">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+			<div>@ Copyright 2020 ifElseCode. All rights reserved</div>
+		</footer>
 
-	<!-- Left Section -->
-	<nav class="main-nav">
-		<div class="main-top">
-		</div>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/about">About</a></li>
-			<li><a href="/blogs">Blogs</a></li>
-			<li><a href="/contact">Contact</a></li>
-			<li><a href="/login">Log In</a></li>
-			<li><a href="/signup">Sign Up</a></li>
-		</ul>
-	</nav>
-
-	<!-- Right Section -->
-	<section class="main-body">
-		<%- body %>
-	</section>
-
-	<script src="/js/main.js"></script>
-</body>
-
+		<script src="/js/main.js"></script>
+	</body>
 </html>
