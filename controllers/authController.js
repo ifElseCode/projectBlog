@@ -2,9 +2,14 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 require("dotenv/config");
 
-// Handle Errors
 const handleErrors = (err) => {
   let errors = { username: "", email: "", password: "" };
+  if (err.message === "Incorrect email") {
+    errors.email = "That email address is not registered"
+  }
+  if (err.message === "Incorrect password") {
+    errors.password = "That password is incorrect";
+  }
   if (err.code === 11000) {
     errors.email = "That email already exists";
     return errors;
@@ -27,27 +32,34 @@ const createToken = (id) => {
 const signup_get = (req, res) => res.render("auth/signup");
 
 const signup_post = async (req, res) => {
-
   const {username, email, password} = req.body;
-
   try {
     const user = await User.create({ username, email, password });
-    const token = createToken(user._id);
-    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 })
+    const token = createToken(user);
+    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(201).json({ user: user._id, username: user.username });
   }
   catch (err) {
     const errors = handleErrors(err);
     res.status(400).json({ errors });
   }
-
 };
 
 const login_get = (req, res) => res.render("auth/login");
 
 const login_post = async (req, res) => {
-  //makes request to db and compares req.body with user in db
-  res.send("User logged in");
+  const { email, password } = req.body;
+  try {
+    const user = await User.login(email, password);
+    const token = createToken(user._id);
+    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.status(200).json({ user: user._id });
+  }
+  catch (err) {
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
+  }
+
 };
 
 module.exports = {
