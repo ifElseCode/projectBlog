@@ -49,13 +49,13 @@ Note: everything within angled brackets (eg, `<filename>`) refers to text that y
 ## 1. Pull Master Branch
 To make sure you're working with the latest code, ensure you've got the latest code in the **master** branch. To do this, type `git pull origin master` while on the **master** branch. Only then should you create you own branch.
 
-## 2. Create **feature/myBranch**
+## 2. Create feature/myBranch
 After pulling the latest code, you'll want to branch off **master**. To do so, type `git checkout -b feature/myBranch`. That will create a branch titled "**feature/myBranch**" and will check it out for you. Now you're ready to make changes to the code without effecting the **master** branch. (Of course, you'll want to name your branch something more descriptive than "**feature/myBranch**". Speak to your team members about how best to do this).
 
-## 3. Commit to **feature/myBranch** and *Push*
+## 3. Commit to feature/myBranch and *Push*
 Once you're finished coding and ready to submit, you'll need to *add* it to the staging area and then *commit* it to your repo before *pushing* it to GitHub.
 
-To *add* it to staging, you can either type `git add <filename>` to add a single file, or you can type `git add .` to add every modified file to the staging area. We'll use this latter command (`git add .`) more often.
+To *add* it to the staging area, you can either type `git add <filename>` to add a single file, or you can type `git add .` to add every modified file to the staging area. We'll use this latter command (`git add .`) more often.
 
 Once you've added it to the staging area, you'll then make a *commit* to **feature/myBranch**. To do this, enter `git commit -m "<message describing the commit>"`. Make your commit message short but descriptive. Now your working tree is clean.
 
@@ -64,7 +64,7 @@ Once you've done that, *push* **feature/myBranch** to GitHub by typing `git push
 ## 4. Checkout and Pull Master
 Move from **feature/myBranch** and checkout the **master** branch by typing `git checkout master`. Once you're on the **master branch**, *pull* the latest master branch from GitHub by typing `git pull origin master`. Since you started working on **feature/myBranch**, there may have been some recent changes to the **master** branch.
 
-## 5. Checkout **feature/myBranch**, Merge Master Branch Into **feature/myBranch** and *Push* **feature/myBranch** Again
+## 5. Checkout feature/myBranch, Merge master Branch Into *eature/myBranch and *Push* feature/myBranch Again
 Now that you have the latest version of the **master branch**, you'll want to *merge* it into **feature/myBranch**, to see if there are any conflicts.
 
 *Checkout* your branch by typing `git checkout feature/myBranch`.
@@ -76,20 +76,20 @@ Once you have done this, *push* **feature/myBranch** by entering `git push origi
 ## 6. Open a Pull Request Between **feature/myBranch** and **master**
 In GitHub, find **feature/myBranch** and click "*Pull request*". This will open a page where you can *Open a pull request*.
 
-The initial title of this will be whatever the message you put down for your latest *commit* to **feature/myBranch**. You can leave a comment to add a more lengthy description of what you will be adding with this pull request. Once you've clicked "*Create pull request*", you will be taken to a page that will show you that your pull request needs to be approved by someone else before the pull request is completed. This is important because the pull request will merge **feature/myBranch** into **master**, which we do not want to mess up!
+You can leave a comment to add a more lengthy description of what you will be adding with this pull request. Once you've clicked "*Create pull request*", you will be taken to a page that will show you that your pull request needs to be approved by someone else before the pull request is completed. This is important because the pull request will merge **feature/myBranch** into **master**, which we do not want to mess up!
 
-Once someone else has reviewed and approved your pull request, you (or the person who approved) can complet the pull request (see step 11).
+Once someone else has reviewed and approved your pull request, you (or the person who approved) can complete the pull request (see step 11).
 
-## 7. Checkout **staging**, then *pull* **staging**
+## 7. Checkout staging, then *pull* staging
 Back in your terminal, *checkout* the **staging** branch by entering `git checkout staging`. Once you're on **staging**, *pull* the latest version of it by entering `git pull origin staging`.
 
-## 8. Merge **feature/myBranch** into **staging**
+## 8. Merge feature/myBranch into staging
 While on the **staging** branch, you'll want to merge **feature/myBranch** into **staging**. Do this by entering `git merge feature/myBranch`, and make sure there are no conflicts.
 
-## 9. Push **staging**
+## 9. Push staging
 Now you'll want to *push* **staging** to GitHub so that others can see how **feature/myBranch** interacts with everything else, without the risk of upsetting the **master** branch.
 
-## 10. If Overlords are Happy with **staging**, then Complete the Pull Request Between **feature/myBranch** and **master**
+## 10. If Overlords are Happy with staging, then Complete the Pull Request Between feature/myBranch and master
 Your peers can now pull **staging** to see how your new code interacts with everything else. If they are happy with this, then they will review and approve your pull request which was opened in step 6.
 
 ## 11. Complete Pull Request and Delete Branch
