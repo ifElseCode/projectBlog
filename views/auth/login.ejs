@@ -1,27 +1,30 @@
-<form class="box" action="" method="POST">
+<form class="box">
     <h1>Welcome back!</h1>
     <div class="emailContainer">
       <input
         class="email"
         type="text"
-        name="Email Address"
+        name="email"
         placeholder="Email Address"
       /><i class="fas fa-user"></i>
     </div>
-    <div class="passwordContainer">
+    <div class="emailErrors"></div>
       <input
         class="pass"
         type="password"
-        name="Password"
+        name="password"
         placeholder="Password"
       /><i class="fas fa-unlock-alt"></i>
     </div>
+    <div class="passwordErrors"></div>
     <div>
       <input type="submit" value="Login" />
       <input type="button" value="Reset Password" />
     </div>
   
     <div class="error-message">
-      <p>Error message will go here!</p>
+      
     </div>
   </form>
+
+  <script src="/js/login.js"></script>
