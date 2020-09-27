@@ -1,3 +1,36 @@
 .inlinefor-thedate-author {
     display: inline-block;
 }
+
+.headermargin {
+    margin: 1em;
+    font-size: 2rem;
+    font-weight: 800;
+    display: inline-block;
+}
+
+header {
+    border-bottom: aliceblue dashed 2px;
+}
+
+main {
+    margin: 1em;
+}
+
+h2 {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+.paragraph-style {
+    font-size: 1.5em;
+}
+
+.linktext {
+    font-size: 1.5em;
+    color: rgb(86, 184, 130)
+}
