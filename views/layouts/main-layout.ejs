@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/base/reset.css" />
-    <link rel="stylesheet" href="css/base/global.css">
-    <link rel="stylesheet" href="css/helpers/variables.css">
-    <link rel="stylesheet" href="css/layouts/main-layout.css">
-    <link rel="stylesheet" href="css/auth/login.css">
-    <link rel="stylesheet" href="css/auth/signup.css">
-    <link rel="stylesheet" href="public\css\blog\blog.css">
-    <link rel="stylesheet" href="public\css\blog\index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-      crossorigin="anonymous" />
-    <title>ifElseCode</title>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/base/reset.css" />
+		<link rel="stylesheet" href="css/base/global.css" />
+		<link rel="stylesheet" href="css/helpers/variables.css" />
+		<link rel="stylesheet" href="css/layouts/main-layout.css" />
+		<link rel="stylesheet" href="css/auth/login.css" />
+		<link rel="stylesheet" href="css/auth/signup.css" />
+		<link rel="stylesheet" href="public\css\blog\blog.css" />
+		<link rel="stylesheet" href="public\css\blog\index.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+			integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+			crossorigin="anonymous"
+		/>
+		<title>ifElseCode</title>
+	</head>
 	<body>
 		<!-- Left Section -->
 		<nav class="main-nav">
-			<div class="main-top"></div>
-			<ul>
+			<img
+				class="main-nav--top"
+				src="https://images.unsplash.com/photo-1599837565318-67429bde7162?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+				alt=""
+			/>
+			<ul class="main-nav--links">
 				<li><a href="/">Home</a></li>
 				<li><a href="/about">About</a></li>
 				<li><a href="/blogs">Blogs</a></li>
@@ -28,12 +35,27 @@
 				<li><a href="/login">Log In</a></li>
 				<li><a href="/signup">Sign Up</a></li>
 			</ul>
+			<div class="main-nav--middle">
+				<h1>ifElseCode</h1>
+				<h2>Developer Group</h2>
+			</div>
+			<div class="main-nav--bottom">
+				<i class="fab fa-facebook-f"></i>
+				<i class="fab fa-twitter"></i>
+				<i class="fab fa-linkedin-in"></i>
+				<i class="fab fa-github"></i>
+			</div>
+			<!-- Hamburger Menu -->
+			<div class="main-nav--burger">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 		</nav>
 
 		<!-- Right Section -->
 		<section class="main-body"><%- body %></section>
-
-		<footer class="main--footer">
+		<footer class="main-footer">
 			<ul>
 				<li><a href="/">Home</a></li>
 				<li><a href="/about">About</a></li>
