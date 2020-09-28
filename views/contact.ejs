@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" text="text/css" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" text="text/css" href="/css/contact/contact.css">
     <script src="https://kit.fontawesome.com/c22c606120.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
 </head>
 <body>
-<div class="header__container">
-    <!--Heading for Contact Page. The header and Home Icon should be on one line spaced apart.-->
-    <div class="header__title">
-        <h1>ifElse Contact</h1>
-    </div>
-    <div class="header__home">
-        <a href="/"><i class="fas fa-home fa-3x"></i></a>
-    </div>
-</div>
+    <div class="head">
+        <!--Heading for Contact Page. The header and Home Icon should be on one line spaced apart.-->
+            <div class="head-contact">
+                <h1>ifElse Contact</h1>
+            </div>
+            <div class="head-home">
+                <a href="/"><i class="fas fa-home fa-3x"></i></a>
+            </div>
+        </div>
 
-<hr>
-   
-<h2 class="header__two">Why not drop us a <span class="line">line</span>?</h2>
+        <hr>
 
-<div class="contact__container">
-<!--Company contanct information, should have and Icon to represent each method of contact above the details. -->
-    <div class="contact__phone">
-<!--Company Phone Number / with mobile phone icon-->
-        <i class="fas fa-mobile-alt fa-2x">+07000000000</i>
-    </div>  
-    <div class="contact__email">
-    <!--Company Email Address / with envelope icon-->
-        <i class="fas fa-envelope-open-text fa-2x">hello@ifelsecode.uk</i>
-    </div>       
-    <div class="contact__hours">
-    <!--Company business hours / with clock icon-->
-        <i class="fas fa-clock fa-2x">Mon - Fri 09:00 - 18:00</i>
-    </div>
-    </div>
+        <h2 class="head-break">Why not drop us a <span class="line">line</span>?</h2>
+
+        <div class="contact-info">
+        <!--Company contanct information, should have and Icon to represent each method of contact above the details. -->
+            <div class="contact-phone">
+            <!--Company Phone Number / with mobile phone icon-->
+                <i class="fas fa-mobile-alt fa-3x"></i>
+                <p>+07000000000</p>
+            </div>
+            <div class="contact-email">
+             <!--Company Email Address / with envelope icon-->
+                <i class="fas fa-envelope-open-text fa-3x"></i>
+                <p><a href = "mailto: hello@ifelsecode.uk">hello@ifelsecode.uk</a></p>
+            </div>
+            <div class="contact-hours">
+            <!--Company business hours / with clock icon-->
+                <i class="fas fa-clock fa-3x"></i>
+                <p>Mon - Fri 09:00 - 18:00</p>
+            </div>
+        </div>
     
 <main>
 <!--Form for client, blogger, to submit for getting support purposes-->
-<div class="container">
-    <form class="form" action="#" method="post">
-    <div>
-        <label><input class="form__name" type="text" name="yourName" placeholder="Your Name"></label>
-    </div>
-    <div class="form__email">
-        <label><input  type="text" name="email" placeholder="Your Email"></label>
-    </div>
-    <div class="form__message">
-        <textarea wrap="hard" name="YourMessage" placeholder="Your Message" rows="15" cols="80" required>
-                Your Message
+    <form action="#" method="POST" class="form-contact">
+        <input class="form-name" type="text" name="yourName" placeholder="Your Name">
+    
+        <input  type="text" name="email" placeholder="Your Email" class="form-email">
+
+        <textarea wrap="hard" name="YourMessage" placeholder="Your Message" rows="15" cols="80" class="form-message" maxlength="300" required placeholder="Your Message"> Your Message
         </textarea> 
-        <input type="submit" value="send" name="send" class="form__message form--send">
-    </div>
+
+        <input type="button" value="send" name="send" class="form-send">
     </form>
-</div>
 </main>
 </body>
 </html>
