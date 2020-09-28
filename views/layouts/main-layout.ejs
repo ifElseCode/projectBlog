@@ -31,12 +31,20 @@
 				<li><a href="/about">About</a></li>
 				<li><a href="/blogs">Blogs</a></li>
 				<li><a href="/contact">Contact</a></li>
+				<% if (!user) { %> <!-- if user jwt cookie does not exist -->
 				<li><a href="/login">Log In</a></li>
 				<li><a href="/signup">Sign Up</a></li>
+				<% } else { %>
+					<li><a href="/dashboard">Dashboard</a></li>
+					<li><a href="/logout">Logout</a></li>
+				<% } %>
 			</ul>
 			<div class="main-nav--middle">
 				<h1>ifElseCode</h1>
 				<h2>Developer Group</h2>
+				<% if (user) { %> <!-- if user jwt cookie does exist -->
+					<p>Logged in as <%= user.username %></p>
+					<% } %>
 			</div>
 			<div class="main-nav--bottom">
 				<i class="fab fa-facebook-f"></i>
