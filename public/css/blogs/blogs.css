@@ -1,0 +1,71 @@
+/* Styles for header */
+.blogs--header {
+	height: 9rem;
+	border-bottom: 1px dashed var(--grey);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2.5rem;
+}
+
+.blogs--header > h1 {
+	font-size: 2.5rem;
+	font-weight: 400;
+}
+
+.blogs--header > i {
+	font-size: 3rem;
+	color: var(--brand-color);
+}
+
+/* Style for blogss container */
+.blogs--container {
+	padding: 0 2.5rem;
+}
+
+/* Styles for each individual blogs block */
+.blogs--blog {
+	padding: 4rem 0;
+}
+
+.blogs--blog:first-of-type {
+	padding-top: 5rem;
+}
+.blogs--blog:last-of-type {
+	padding-bottom: 5rem;
+}
+
+.blogs--image {
+	max-height: 628px;
+	width: 100%;
+	object-fit: contain;
+}
+
+.blogs--title {
+	font-size: 3.25rem;
+	font-weight: 600;
+	line-height: 4.5rem;
+	margin: 1.5rem 0;
+}
+
+.blogs--info {
+	font-size: 1.3rem;
+	color: var(--grey);
+	font-weight: 500;
+	margin-bottom: 1.5rem;
+}
+
+.blogs--info > span {
+	color: var(--brand-color);
+}
+
+.blogs--content {
+	color: var(--grey);
+	font-size: 1.6rem;
+	margin-bottom: 1.5rem;
+}
+
+.blogs--link {
+	font-size: 1.5em;
+	color: var(--brand-color);
+}
