@@ -26,7 +26,7 @@ const dashboard_user_roles_delete = (req, res) => {
 const dashboard_blog_posts_get = async (req, res) => {
   const months = ["January", "Februar", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   try {
-    const blogs = await Blog.find();
+    const blogs = await Blog.find().sort({ date: -1 });
     res.render("dashboard/blog-posts.ejs", { layout: "./layouts/dashboard-layout", blogs, months } );
   }
   catch (err) {
