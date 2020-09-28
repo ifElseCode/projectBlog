@@ -1,0 +1,37 @@
+<div class="dashboard-blog-posts--header">
+	<h1 class="dashboard-blog-posts--title">
+		Blog Post <span>All blog post in the database</span>
+	</h1>
+	<a href="/dashboard/blog-posts/add-blog-post">
+		<i class="fas fa-plus"></i>
+		Add Blog
+	</a>
+</div>
+
+<table class="dashboard-blog-posts--table">
+	<tr>
+		<th>Date</th>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Actions</th>
+	</tr>
+	<% for(var i=1; i<=100; i++) {%>
+	<tr>
+		<td>12 July 2020</td>
+		<td>Do you even react bro</td>
+		<td>DeNoob</td>
+		<td class="dashboard-blog-posts--actions">
+			<a
+				href="/dashboard/blog-posts/edit-blog-post/<%=i%>"
+				class="dashboard-blog-posts--button dashboard-blog-posts--button__green"
+				>Edit</a
+			>
+			<form
+				class="dashboard-blog-posts--button dashboard-blog-posts--button__red"
+			>
+				Delete
+			</form>
+		</td>
+	</tr>
+	<% } %>
+</table>

@@ -1,0 +1,32 @@
+<h1>Dashboard: User Roles</h1>
+<div>
+  <% users.forEach(user =>{ %>
+    <div style="border: 1px solid blue">
+      <p><%= user.username %></p>
+      <p><%= user.email %></p>
+      <ul style="background: #CCC">
+        <li><a>Make Admin</a></li>
+        <li><a>Make Author</a></li>
+        <li><a class="delete" data-doc="<%= user.id %>">Delete</a></li>
+      </ul>
+    </div>
+  <% }) %>
+</div>
+<!-- I will move this into a separate JS file later, this is a work in progress :) -->
+<script>
+  const deleteButton = document.querySelectorAll(".delete");
+
+  deleteButton.forEach(button => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = button.dataset.doc;
+      const endpoint = `/dashboard/user-roles/${id}`;
+      fetch(endpoint, {
+        method: "DELETE"
+      })
+        .then(response => window.location.reload())
+        .catch(err => console.log(err));
+    });
+  })
+  
+</script>

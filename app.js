@@ -1,18 +1,22 @@
 const express = require('express');
 const app = express();
+const PORT = 3000;
 const mongoose = require("mongoose");
 require("dotenv/config");
-const PORT = 3000;
+const cookieParser = require("cookie-parser");
+const authMiddleware = require("./middleware/authMiddleware");
 
 const expressLayouts = require("express-ejs-layouts");
 const aboutRouter = require("./routes/aboutRouter");
 const blogRouter = require("./routes/blogRouter");
 const authRouter = require("./routes/authRouter");
+const dashboardRouter = require("./routes/dashboardRouter");
 
 // Middleware
 app.use(expressLayouts);
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cookieParser());
 
 // View Engines
 app.set("view engine", "ejs");
@@ -28,6 +32,7 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
   .catch(err => console.log(err));
 
 // Routes
+app.get("*", authMiddleware.checkUser);
 // HOME
 app.get("/", (req, res) => res.render("blog"));
 
@@ -43,8 +48,8 @@ app.use("/blogs", blogRouter);
 // CONTACT
 app.get("/contact", (req, res) => res.render("contact"));
 
-// ADMIN
-app.get("/dashboard", (req, res) => res.render("dashboard", { layout: "./layouts/dashboard-layout" }));
+// DASHBOARD
+app.use("/dashboard", dashboardRouter);
 
 // 404 error
 app.use((req, res) => res.render("404"));

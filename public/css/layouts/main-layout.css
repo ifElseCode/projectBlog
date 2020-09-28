@@ -1,28 +1,153 @@
 body {
-    background-color: #F2F0F2;
-    color: #191B1A;
-    padding: 6rem 9rem;
+	background-color: #f2f0f2;
+	padding: 6rem 9rem;
+}
+
+.main-nav,
+.main-body,
+.main-footer {
+	-webkit-box-shadow: 0px 0px 54px 5px rgba(0, 0, 0, 0.19);
+	-moz-box-shadow: 0px 0px 54px 5px rgba(0, 0, 0, 0.19);
+	box-shadow: 0px 0px 54px 5px rgba(0, 0, 0, 0.19);
 }
 
 .main-nav {
-    background-color: var(--bg-color);
-    position: fixed;
-    width: 350px;
-    height: 550px;
-    border-radius: 2rem;
-    overflow: hidden;
+	background-color: var(--bg-color);
+	position: fixed;
+	width: 350px;
+	height: 550px;
+	border-radius: 2rem;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
 
-.main-top {
-    height: 50%;
-    width: 100%;
-    background-color: #8FA0C7;
+.main-nav--top {
+	width: 100%;
+	height: 50%;
+	background-color: #8fa0c7;
+	object-fit: cover;
+}
+
+.main-nav--links {
+	background: #f2f0f2;
+	display: none;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 15%;
+}
+
+.main-nav--links.active {
+	display: flex;
+}
+
+.main-nav--links > li > a {
+	font-size: 1.2rem;
+}
+
+.main-nav--middle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 30%;
+	align-items: center;
+	border-bottom: 1px dotted var(--grey);
+}
+
+.main-nav--middle > h1 {
+	font-size: 2.5rem;
+	font-weight: 600;
+}
+
+.main-nav--middle > h2 {
+	color: var(--grey);
+	font-size: 2rem;
+}
+
+.main-nav--bottom {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 20%;
+	color: #fff;
+	font-size: 1.5rem;
+}
+
+.main-nav--bottom > i {
+	border-radius: 50%;
+	width: 4.5rem;
+	height: 4.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-nav--bottom > i:nth-child(1) {
+	background-color: #3b5998;
+}
+
+.main-nav--bottom > i:nth-child(2) {
+	background-color: #1da1f2;
+}
+
+.main-nav--bottom > i:nth-child(3) {
+	background-color: #2867b2;
+}
+
+.main-nav--bottom > i:nth-child(4) {
+	background-color: #333333;
 }
 
 .main-body {
-    background-color: #FFF;
-    margin-left: 380px;
-    border-radius: 2rem;
-    position: relative;
-    overflow: hidden;
+	background-color: #fff;
+	margin-left: 380px;
+	margin-bottom: 5rem;
+	border-radius: 2rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.main-footer {
+	margin-left: 380px;
+	height: 175px;
+	background-image: url('https://cdn.discordapp.com/attachments/752950996707311616/759534699512463400/unknown.png');
+	font-size: 1.5rem;
+	letter-spacing: 0.1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2rem;
+}
+
+.main-footer > ul {
+	display: flex;
+	justify-content: space-between;
+	width: 22.5%;
+	margin-bottom: 2rem;
+}
+
+.main-footer > div {
+	color: var(--grey);
+}
+
+/* Hamburger Menu */
+.main-nav--burger {
+	background: var(--brand-color);
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.main-nav--burger > div {
+	background-color: white;
+	height: 2px;
+	width: 22.5px;
+	margin: 3px;
 }
