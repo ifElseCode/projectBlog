@@ -1,1 +1,50 @@
-<h1>Contact Us</h1>
+<!DOCTYPE html>
+<body>
+    <div class="head">
+        <!--Heading for Contact Page. The header and Home Icon should be on one line spaced apart.-->
+            <div class="head-contact">
+                <h1>ifElse Contact</h1>
+            </div>
+            <div class="head-home">
+                <a href="/"><i class="fas fa-home fa-3x"></i></a>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2 class="head-break">Why not drop us a <span class="line">line</span>?</h2>
+
+        <div class="contact-info">
+        <!--Company contanct information, should have and Icon to represent each method of contact above the details. -->
+            <div class="contact-phone">
+            <!--Company Phone Number / with mobile phone icon-->
+                <i class="fas fa-mobile-alt fa-3x"></i>
+                <p>+07000000000</p>
+            </div>
+            <div class="contact-email">
+             <!--Company Email Address / with envelope icon-->
+                <i class="fas fa-envelope-open-text fa-3x"></i>
+                <p><a href = "mailto: hello@ifelsecode.uk">hello@ifelsecode.uk</a></p>
+            </div>
+            <div class="contact-hours">
+            <!--Company business hours / with clock icon-->
+                <i class="fas fa-clock fa-3x"></i>
+                <p>Mon - Fri 09:00 - 18:00</p>
+            </div>
+        </div>
+    
+<main>
+<!--Form for client, blogger, to submit for getting support purposes-->
+    <form action="#" method="POST" class="form-contact">
+        <input class="form-name" type="text" name="yourName" placeholder="Your Name">
+    
+        <input  type="text" name="email" placeholder="Your Email" class="form-email">
+
+        <textarea wrap="hard" name="YourMessage" placeholder="Your Message" rows="15" cols="80" class="form-message" maxlength="300" required placeholder="Your Message"> Your Message
+        </textarea> 
+
+        <input type="button" value="send" name="send" class="form-send">
+    </form>
+</main>
+</body>
+</html>
