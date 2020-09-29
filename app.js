@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
+const PORT = 3000;
 const mongoose = require("mongoose");
 require("dotenv/config");
 const cookieParser = require("cookie-parser");
-const PORT = 3000;
+const authMiddleware = require("./middleware/authMiddleware");
 
 const expressLayouts = require("express-ejs-layouts");
 const aboutRouter = require("./routes/aboutRouter");
@@ -31,6 +32,7 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
   .catch(err => console.log(err));
 
 // Routes
+app.get("*", authMiddleware.checkUser);
 // HOME
 app.get("/", (req, res) => res.render("blog"));
 

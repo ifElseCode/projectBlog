@@ -19,10 +19,10 @@
   <div class="dashboard-sidebar">
     <div class="dashboard-sidebar--user">
       <div class="dashboard-sidebar--initials">
-        UH
+        <%= user.username.split(" ").map(name => name[0]).join("") %>
       </div>
       <div class="dashboard-sidebar--info">
-        <div>Username Here</div>
+        <div><%= user.username %></div>
         <div>Admin</div>
       </div>
     </div>
@@ -51,7 +51,7 @@
           Blog Post
         </div>
       </a>
-      <a href="">
+      <a href="/logout">
         <i class="fas fa-sign-out-alt"></i>
         <div>
           Logout
