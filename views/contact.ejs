@@ -34,17 +34,18 @@
         </div>
     
 <main>
-<!--Form for client, blogger, to submit for getting support purposes-->
-    <form action="#" method="POST" class="form-contact">
-        <input class="form-name" type="text" name="yourName" placeholder="Your Name">
-    
-        <input  type="text" name="email" placeholder="Your Email" class="form-email">
-
-        <textarea wrap="hard" name="YourMessage" placeholder="Your Message" rows="15" cols="80" class="form-message" maxlength="300" required placeholder="Your Message"> Your Message
+       <!--Form for client, blogger, to submit for getting support purposes-->
+       <form action="#" method="POST">
+        <div  class="form-contact">
+            <input class="form-name" type="text" name="yourName" placeholder="Your Name" required>
+        <input  type="text" name="email" placeholder="Your Email" class="form-email" required>
+        </div>
+        <div class="contact-form">
+        <textarea wrap="hard" name="YourMessage" placeholder="Your Message" rows="10" cols="60" required class="form-message">
         </textarea> 
-
-        <input type="button" value="send" name="send" class="form-send">
-    </form>
+        <input type="button" value="send" name="submit" class="form-send">
+        </div>
+</form>
 </main>
 </body>
 </html>
