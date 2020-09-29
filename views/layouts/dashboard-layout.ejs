@@ -23,7 +23,11 @@
       </div>
       <div class="dashboard-sidebar--info">
         <div><%= user.username %></div>
+        <% if (user.role.admin) { %>
         <div>Admin</div>
+        <% } else if (user.role.author) { %>
+        <div>Author</div>
+        <% } %>  
       </div>
     </div>
     <div class="dashboard-sidebar--nav">

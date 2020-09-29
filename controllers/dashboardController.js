@@ -23,8 +23,22 @@ const dashboard_user_roles_delete = (req, res) => {
     .catch(err => console.log(err));
 }
 
+const dashboard_user_roles_admin_patch = (req, res) => {
+  const id = req.params.id;
+  User.findByIdAndUpdate(id, { role: { admin: true } })
+    .then(result => res.json({ redirect: "/dashboard/user-roles" }))
+    .catch(err => console.log(err)); 
+}
+
+const dashboard_user_roles_author_patch = (req, res) => {
+  const id = req.params.id;
+  User.findByIdAndUpdate(id, { role: { author: true } })
+    .then(result => res.json({ redirect: "/dashboard/user-roles" }))
+    .catch(err => console.log(err));
+}
+
 const dashboard_blog_posts_get = async (req, res) => {
-  const months = ["January", "Februar", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   try {
     const blogs = await Blog.find().sort({ date: -1 });
     res.render("dashboard/blog-posts.ejs", { layout: "./layouts/dashboard-layout", blogs, months } );
@@ -51,6 +65,8 @@ module.exports = {
   dashboard_get,
   dashboard_user_roles_get,
   dashboard_user_roles_delete,
+  dashboard_user_roles_admin_patch,
+  dashboard_user_roles_author_patch,
   dashboard_blog_posts_get,
   dashboard_blog_posts_create_get,
   dashboard_blog_posts_create_post
