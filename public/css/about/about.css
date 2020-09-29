@@ -1,0 +1,75 @@
+.about-pageundertone {
+    background: lightgray;
+  }
+
+.about-heading {
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 400;
+    }
+
+.about-intro{
+    font-size: 17.5px;
+    text-align: center;
+}
+
+.about-description{
+    font-size: 16px;
+    text-align: center;
+}
+
+.about-body{
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+
+.about-name {
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.container {
+    width: 100%;
+    padding: 8px;
+}
+
+img {
+    float: left;
+    display: block;
+   width: 200px;
+   height: 200px;
+   margin: 1em auto;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+   border-radius: 50%;
+   border: 5px solid lightseagreen;
+}
+
+.text {
+    display: flex;
+    align-items: middle;
+    vertical-align: middle;
+    padding: 50px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
+
+
+
+
