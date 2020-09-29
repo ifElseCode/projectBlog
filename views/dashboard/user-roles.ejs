@@ -4,9 +4,14 @@
     <div style="border: 1px solid blue">
       <p><%= user.username %></p>
       <p><%= user.email %></p>
+    <% if (user.role.admin) { %>
+      <p>Admin</p>
+    <% } else if (user.role.author) { %>
+      <p>Author</p>
+    <% } %>  
       <ul style="background: #CCC">
-        <li><a>Make Admin</a></li>
-        <li><a>Make Author</a></li>
+        <li><a class="admin" data-doc="<%= user.id %>">Make Admin</a></li>
+        <li><a class="author" data-doc="<%= user.id %>">Make Author</a></li>
         <li><a class="delete" data-doc="<%= user.id %>">Delete</a></li>
       </ul>
     </div>
@@ -14,19 +19,47 @@
 </div>
 <!-- I will move this into a separate JS file later, this is a work in progress :) -->
 <script>
-  const deleteButton = document.querySelectorAll(".delete");
+const deleteButton = document.querySelectorAll(".delete");
 
-  deleteButton.forEach(button => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      const id = button.dataset.doc;
-      const endpoint = `/dashboard/user-roles/${id}`;
-      fetch(endpoint, {
-        method: "DELETE"
-      })
-        .then(response => window.location.reload())
-        .catch(err => console.log(err));
-    });
-  })
+deleteButton.forEach(button => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = button.dataset.doc;
+    const endpoint = `/dashboard/user-roles/${id}`;
+    fetch(endpoint, {
+      method: "DELETE"
+    })
+      .then(response => window.location.reload())
+      .catch(err => console.log(err));
+  });
+})
+
+const adminButtons = document.querySelectorAll(".admin");
+
+adminButtons.forEach(button => {
+  button.addEventListener("click", (e) => {
+    const id = button.dataset.doc;
+    const endpoint = `/dashboard/user-roles/admin/${id}`;
+    fetch(endpoint, {
+      method: "PATCH"
+    })
+      .then(response => window.location.reload())
+      .catch(err => console.log(err));
+  });
+});
+
+const authorButtons = document.querySelectorAll(".author");
+
+authorButtons.forEach(button => {
+  button.addEventListener("click", (e) => {
+    const id = button.dataset.doc;
+    const endpoint = `/dashboard/user-roles/author/${id}`;
+    fetch(endpoint, {
+      method: "PATCH"
+    })
+      .then(response => window.location.reload())
+      .catch(err => console.log(err));
+  });
+});
   
 </script>
