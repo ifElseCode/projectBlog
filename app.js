@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 require("dotenv/config");
 const cookieParser = require("cookie-parser");
 const authMiddleware = require("./middleware/authMiddleware");
+const Blog = require("./models/blog");
 
 const expressLayouts = require("express-ejs-layouts");
 const aboutRouter = require("./routes/aboutRouter");
@@ -33,8 +34,17 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
 
 // Routes
 app.get("*", authMiddleware.checkUser);
+
 // HOME
-app.get("/", (req, res) => res.render("blog"));
+app.get("/", async (req, res) => {
+  try {
+    const blogs = await Blog.find();
+    res.render("home", {blogs});
+  }
+  catch (err) {
+    console.log(err);
+  }
+});
 
 // AUTHENTICATION
 app.use(authRouter);
