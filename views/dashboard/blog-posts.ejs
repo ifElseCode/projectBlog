@@ -1,8 +1,8 @@
 <div class="dashboard-blog-posts--header">
 	<h1 class="dashboard-blog-posts--title">
-		Blog Post <span>All blog post in the database</span>
+		Blog Posts <span>All blog posts in the database</span>
 	</h1>
-	<a href="/dashboard/blog-posts/add-blog-post">
+	<a href="/dashboard/blog-posts/create">
 		<i class="fas fa-plus"></i>
 		Add Blog
 	</a>
@@ -15,14 +15,14 @@
 		<th>Author</th>
 		<th>Actions</th>
 	</tr>
-	<% for(var i=1; i<=100; i++) {%>
+	<% blogs.forEach(blog => { %>
 	<tr>
-		<td>12 July 2020</td>
-		<td>Do you even react bro</td>
-		<td>DeNoob</td>
+		<td><%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %></td>
+		<td><%= blog.title %></td>
+		<td><%= blog.author %></td>
 		<td class="dashboard-blog-posts--actions">
 			<a
-				href="/dashboard/blog-posts/edit-blog-post/<%=i%>"
+				href="/dashboard/blog-posts/edit/<%= blog.id %>"
 				class="dashboard-blog-posts--button dashboard-blog-posts--button__green"
 				>Edit</a
 			>
@@ -33,5 +33,5 @@
 			</form>
 		</td>
 	</tr>
-	<% } %>
+	<% }) %>
 </table>

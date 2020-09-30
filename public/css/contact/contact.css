@@ -1,5 +1,14 @@
 /*Global style*/
+<<<<<<< HEAD
 .h-break {
+=======
+body {
+    background-color: #F2F0F2;
+    font-family: "Lato", sans-serif;
+}
+
+hr {
+>>>>>>> master
         border: 0; 
         height: 1px; 
         background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
@@ -50,6 +59,7 @@
     padding: 2rem;
 }
 
+<<<<<<< HEAD
 .contact-mobile{
     color: lightseagreen;
 }
@@ -63,11 +73,27 @@
 }
 
 .contact-para {
+=======
+.fa-mobile-alt {
+    color: lightseagreen;
+}
+
+.fa-envelope-open-text {
+    color: rgb(173, 62, 42);
+}
+
+.fa-clock{
+    color: turquoise;
+}
+
+p {
+>>>>>>> master
     letter-spacing: .2rem;
     font-size: 1.5rem;
 }
 
 /*Form styles*/
+<<<<<<< HEAD
 ::-webkit-input-placeholder {
     font-family: "Lato", sans-serif;
     font-size: 14px;
@@ -128,3 +154,5 @@
     padding: 1rem 0 1rem 1rem;
     width: 25rem;
  }
+=======
+>>>>>>> master
