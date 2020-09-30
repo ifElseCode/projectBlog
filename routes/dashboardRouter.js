@@ -3,7 +3,7 @@ const dashboardRouter = express.Router();
 const dashboardController = require("../controllers/dashboardController");
 
 dashboardRouter.get("/", dashboardController.dashboard_get);
-dashboardRouter.get("/user-roles", dashboardController.dashboard_users_get);
+dashboardRouter.get("/users", dashboardController.dashboard_users_get);
 dashboardRouter.delete("/users/:id", dashboardController.dashboard_users_delete);
 dashboardRouter.patch("/users/admin/:id", dashboardController.dashboard_users_admin_patch);
 dashboardRouter.patch("/users/author/:id", dashboardController.dashboard_users_author_patch);
