@@ -25,7 +25,7 @@ deleteButton.forEach(button => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
     const id = button.dataset.doc;
-    const endpoint = `/dashboard/user-roles/${id}`;
+    const endpoint = `/dashboard/users/${id}`;
     fetch(endpoint, {
       method: "DELETE"
     })
@@ -39,7 +39,7 @@ const adminButtons = document.querySelectorAll(".admin");
 adminButtons.forEach(button => {
   button.addEventListener("click", (e) => {
     const id = button.dataset.doc;
-    const endpoint = `/dashboard/user-roles/admin/${id}`;
+    const endpoint = `/dashboard/users/admin/${id}`;
     fetch(endpoint, {
       method: "PATCH"
     })
@@ -53,7 +53,7 @@ const authorButtons = document.querySelectorAll(".author");
 authorButtons.forEach(button => {
   button.addEventListener("click", (e) => {
     const id = button.dataset.doc;
-    const endpoint = `/dashboard/user-roles/author/${id}`;
+    const endpoint = `/dashboard/users/author/${id}`;
     fetch(endpoint, {
       method: "PATCH"
     })
