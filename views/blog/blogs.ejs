@@ -1,4 +1,13 @@
-<header class="blogs--header">
+<% blogs.forEach(blog => { %>
+	
+		<p><a href="/blog/clicked"><%= blog.title %></a></p>
+		<p><%= blog.subtitle %></p>
+		<p><%= blog.author %></p>
+		<p><%= blog.content %></p>
+		<p><%= blog.date %></p>
+<% }); %>
+
+<!-- <header class="blogs--header">
 	<h1>ifElse Top Blogs</h1>
 	<i class="far fa-envelope"></i>
 </header>
@@ -50,4 +59,4 @@
 		<a class="blogs--link" href="#">Read More</a>
 	</div>
 	<% } %>
-</section>
+</section> -->
