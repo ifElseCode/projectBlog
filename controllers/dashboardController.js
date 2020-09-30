@@ -6,7 +6,7 @@ const dashboard_get = (req, res) => res.render("dashboard/index", { layout: "./l
 const dashboard_users_get = async (req, res) => {
   try {
     const users = await User.find();
-    res.render("dashboard/users.ejs", { layout: "./layouts/dashboard-layout", users: users });
+    res.render("dashboard/users", { layout: "./layouts/dashboard-layout", users: users });
   }
   catch (err) {
     res.status(400);
