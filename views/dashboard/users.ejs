@@ -1,14 +1,15 @@
 <h1>Dashboard: Users</h1>
 <div>
+  <% if (user.role.admin) { %>
   <% users.forEach(user =>{ %>
     <div style="border: 1px solid blue">
       <p><%= user.username %></p>
       <p><%= user.email %></p>
-    <% if (user.role.admin) { %>
+      <% if (user.role.admin) { %>
       <p>Admin</p>
-    <% } else if (user.role.author) { %>
+      <% } else if (user.role.author) { %>
       <p>Author</p>
-    <% } %>  
+      <% } %>
       <ul style="background: #CCC">
         <li><a class="admin" data-doc="<%= user.id %>">Make Admin</a></li>
         <li><a class="author" data-doc="<%= user.id %>">Make Author</a></li>
@@ -16,50 +17,24 @@
       </ul>
     </div>
   <% }) %>
+  <% } else { %>
+    <% users.forEach(user =>{ %>
+      <div style="border: 1px solid blue">
+        <p><%= user.username %></p>
+        <p><%= user.email %></p>
+        <% if (user.role.admin) { %>
+        <p>Admin</p>
+        <% } else if (user.role.author) { %>
+        <p>Author</p>
+        <% } %>
+        <ul style="background: #CCC">
+          <li>Make Admin</li> <!--these should be greyed out to indicate that they can't be clicked-->
+          <li>Make Author</li>
+          <li>Delete</li>
+        </ul>
+      </div>
+      <% }) %>
+  <% } %>
 </div>
-<!-- I will move this into a separate JS file later, this is a work in progress :) -->
-<script>
-const deleteButton = document.querySelectorAll(".delete");
 
-deleteButton.forEach(button => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    const id = button.dataset.doc;
-    const endpoint = `/dashboard/users/${id}`;
-    fetch(endpoint, {
-      method: "DELETE"
-    })
-      .then(response => window.location.reload())
-      .catch(err => console.log(err));
-  });
-})
-
-const adminButtons = document.querySelectorAll(".admin");
-
-adminButtons.forEach(button => {
-  button.addEventListener("click", (e) => {
-    const id = button.dataset.doc;
-    const endpoint = `/dashboard/users/admin/${id}`;
-    fetch(endpoint, {
-      method: "PATCH"
-    })
-      .then(response => window.location.reload())
-      .catch(err => console.log(err));
-  });
-});
-
-const authorButtons = document.querySelectorAll(".author");
-
-authorButtons.forEach(button => {
-  button.addEventListener("click", (e) => {
-    const id = button.dataset.doc;
-    const endpoint = `/dashboard/users/author/${id}`;
-    fetch(endpoint, {
-      method: "PATCH"
-    })
-      .then(response => window.location.reload())
-      .catch(err => console.log(err));
-  });
-});
-  
-</script>
+<script src="/js/users.js"></script>
