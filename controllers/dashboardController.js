@@ -1,14 +1,12 @@
 const User = require("../models/User");
 const Blog = require("../models/blog");
 
-const dashboard_get = (req, res) => {
-  res.render("dashboard/index.ejs", { layout: "./layouts/dashboard-layout"});
-}
+const dashboard_get = (req, res) => res.render("dashboard/index", { layout: "./layouts/dashboard-layout" });
 
-const dashboard_user_roles_get = async (req, res) => {
+const dashboard_users_get = async (req, res) => {
   try {
     const users = await User.find();
-    res.render("dashboard/user-roles.ejs", { layout: "./layouts/dashboard-layout", users: users });
+    res.render("dashboard/users.ejs", { layout: "./layouts/dashboard-layout", users: users });
   }
   catch (err) {
     res.status(400);
@@ -16,24 +14,24 @@ const dashboard_user_roles_get = async (req, res) => {
   }
 }
 
-const dashboard_user_roles_delete = (req, res) => {
+const dashboard_users_delete = (req, res) => {
   const id = req.params.id;
   User.findByIdAndDelete(id)
-    .then(result => res.json({ redirect: "/dashboard/user-roles" } ))
+    .then(result => res.json({ redirect: "/dashboard/users" } ))
     .catch(err => console.log(err));
 }
 
-const dashboard_user_roles_admin_patch = (req, res) => {
+const dashboard_users_admin_patch = (req, res) => {
   const id = req.params.id;
   User.findByIdAndUpdate(id, { role: { admin: true } })
-    .then(result => res.json({ redirect: "/dashboard/user-roles" }))
+    .then(result => res.json({ redirect: "/dashboard/users" }))
     .catch(err => console.log(err)); 
 }
 
-const dashboard_user_roles_author_patch = (req, res) => {
+const dashboard_users_author_patch = (req, res) => {
   const id = req.params.id;
   User.findByIdAndUpdate(id, { role: { author: true } })
-    .then(result => res.json({ redirect: "/dashboard/user-roles" }))
+    .then(result => res.json({ redirect: "/dashboard/users" }))
     .catch(err => console.log(err));
 }
 
@@ -63,10 +61,10 @@ const dashboard_blog_posts_create_post = async (req, res) => {
 
 module.exports = {
   dashboard_get,
-  dashboard_user_roles_get,
-  dashboard_user_roles_delete,
-  dashboard_user_roles_admin_patch,
-  dashboard_user_roles_author_patch,
+  dashboard_users_get,
+  dashboard_users_delete,
+  dashboard_users_admin_patch,
+  dashboard_users_author_patch,
   dashboard_blog_posts_get,
   dashboard_blog_posts_create_get,
   dashboard_blog_posts_create_post
