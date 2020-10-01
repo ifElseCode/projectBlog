@@ -1,20 +1,13 @@
 /*Global style*/
-<<<<<<< HEAD
 .h-break {
-=======
-body {
-    background-color: #F2F0F2;
-    font-family: "Lato", sans-serif;
-}
 
 hr {
->>>>>>> master
-        border: 0; 
-        height: 1px; 
-        background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-        background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-        background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-        background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+    border: 0; 
+    height: 1px; 
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }
 
 /*header*/
@@ -59,7 +52,6 @@ hr {
     padding: 2rem;
 }
 
-<<<<<<< HEAD
 .contact-mobile{
     color: lightseagreen;
 }
@@ -73,7 +65,7 @@ hr {
 }
 
 .contact-para {
-=======
+
 .fa-mobile-alt {
     color: lightseagreen;
 }
@@ -87,13 +79,11 @@ hr {
 }
 
 p {
->>>>>>> master
     letter-spacing: .2rem;
     font-size: 1.5rem;
 }
 
 /*Form styles*/
-<<<<<<< HEAD
 ::-webkit-input-placeholder {
     font-family: "Lato", sans-serif;
     font-size: 14px;
@@ -154,5 +144,3 @@ p {
     padding: 1rem 0 1rem 1rem;
     width: 25rem;
  }
-=======
->>>>>>> master
