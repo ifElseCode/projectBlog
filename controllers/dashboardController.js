@@ -52,11 +52,17 @@ const dashboard_blog_posts_create_get = (req, res) => {
 
 const dashboard_blog_posts_create_post = async (req, res) => {
   try {
-    const blog = await Blog.create(req.body);
+    await Blog.create(req.body);
   }
   catch(err) {
     console.log(err);
   }
+}
+
+const dashboard_blog_posts_delete = async (req, res) => {
+  Blog.findByIdAndDelete(req.params.id)
+    .then(result => res.json())
+    .catch(err => console.log(err));  
 }
 
 module.exports = {
@@ -67,5 +73,6 @@ module.exports = {
   dashboard_users_author_patch,
   dashboard_blog_posts_get,
   dashboard_blog_posts_create_get,
-  dashboard_blog_posts_create_post
+  dashboard_blog_posts_create_post,
+  dashboard_blog_posts_delete
 }
