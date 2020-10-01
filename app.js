@@ -37,9 +37,10 @@ app.get("*", authMiddleware.checkUser);
 
 // HOME
 app.get("/", async (req, res) => {
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   try {
     const blogs = await Blog.find();
-    res.render("home", {blogs});
+    res.render("home", {blogs, months});
   }
   catch (err) {
     console.log(err);
