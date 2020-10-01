@@ -9,12 +9,12 @@ form.addEventListener("submit", async (e) => {
   const content = form.content.value;
 
   try {
-    fetch("/dashboard/blog-posts/create", {
+    fetch("/dashboard/blogs/create", {
       method: "POST",
       body: JSON.stringify({ title, subtitle, author, content }),
       headers: { "Content-Type": "application/json" }
     });
-    location.assign("/dashboard/blog-posts");
+    location.assign("/dashboard/blogs");
   }
   catch (err) {
     console.log(err);

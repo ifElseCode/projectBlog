@@ -4,7 +4,7 @@ deleteButtons.forEach(button => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
     const id = button.dataset.doc;
-    const endpoint = `/dashboard/blog-posts/${id}`;
+    const endpoint = `/dashboard/blogs/${id}`;
     fetch(endpoint, {
       method: "DELETE"
     })

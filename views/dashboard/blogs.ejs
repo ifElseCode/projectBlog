@@ -2,7 +2,7 @@
 	<h1 class="dashboard-blog-posts--title">
 		Blog Posts <span>All blog posts in the database</span>
 	</h1>
-	<a href="/dashboard/blog-posts/create">
+	<a href="/dashboard/blogs/create">
 		<i class="fas fa-plus"></i>
 		Add Blog
 	</a>
@@ -17,12 +17,13 @@
 	</tr>
 	<% blogs.forEach(blog => { %>
 	<tr>
-		<td><a href="/blog/clicked"><%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %></a></td>
+		<!--I've included the time here just to make sure these are ordered correctly. I was having some issues earlier-->
+		<td><%= `${blog.date.getHours()}:${blog.date.getMinutes()}:${blog.date.getSeconds()} on ${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %></td>
 		<td><%= blog.title %></td>
 		<td><%= blog.author %></td>
 		<td class="dashboard-blog-posts--actions">
 			<a
-				href="/dashboard/blog-posts/edit/<%= blog.id %>"
+				href="/dashboard/blogs/edit/<%= blog.id %>"
 				class="dashboard-blog-posts--button dashboard-blog-posts--button__green"
 				>Edit</a
 			>

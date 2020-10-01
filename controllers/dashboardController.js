@@ -35,22 +35,20 @@ const dashboard_users_author_patch = (req, res) => {
     .catch(err => console.log(err));
 }
 
-const dashboard_blog_posts_get = async (req, res) => {
+const dashboard_blogs_get = async (req, res) => {
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   try {
     const blogs = await Blog.find().sort({ date: -1 });
-    res.render("dashboard/blog-posts.ejs", { layout: "./layouts/dashboard-layout", blogs, months } );
+    res.render("dashboard/blogs.ejs", { layout: "./layouts/dashboard-layout", blogs, months } );
   }
   catch (err) {
     console.log(err);
   }
 }
 
-const dashboard_blog_posts_create_get = (req, res) => {
-  res.render("dashboard/blog-posts-create.ejs", { layout: "./layouts/dashboard-layout" });
-}
+const dashboard_blogs_create_get = (req, res) => res.render("dashboard/blogs-create", { layout: "./layouts/dashboard-layout" });
 
-const dashboard_blog_posts_create_post = async (req, res) => {
+const dashboard_blogs_create_post = async (req, res) => {
   try {
     await Blog.create(req.body);
   }
@@ -59,7 +57,7 @@ const dashboard_blog_posts_create_post = async (req, res) => {
   }
 }
 
-const dashboard_blog_posts_delete = async (req, res) => {
+const dashboard_blogs_delete = async (req, res) => {
   Blog.findByIdAndDelete(req.params.id)
     .then(result => res.json())
     .catch(err => console.log(err));  
@@ -71,8 +69,8 @@ module.exports = {
   dashboard_users_delete,
   dashboard_users_admin_patch,
   dashboard_users_author_patch,
-  dashboard_blog_posts_get,
-  dashboard_blog_posts_create_get,
-  dashboard_blog_posts_create_post,
-  dashboard_blog_posts_delete
+  dashboard_blogs_get,
+  dashboard_blogs_create_get,
+  dashboard_blogs_create_post,
+  dashboard_blogs_delete
 }
