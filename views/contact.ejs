@@ -1,48 +1,40 @@
-<!DOCTYPE html>
-<body>
-    <div class="head">
-        <!--Heading for Contact Page. The header and Home Icon should be on one line spaced apart.-->
-            <div class="head-contact">
-                <h1>ifElse Contact</h1>
-            </div>
-            <div class="head-home">
-                <a href="/"><i class="fas fa-home fa-3x"></i></a>
-            </div>
-        </div>
+<div class="head">
+    <div class="head-contact">
+        <h1>ifElse Contact</h1>
+    </div>
+    <div class="head-home">
+        <a href="/"><i class="fas fa-home fa-3x"></i></a>
+    </div>
+</div>
 
-        <hr class="h-break">
+<hr class="h-break">
 
-        <h2 class="head-break">Why not drop us a <span class="line">line</span>?</h2>
+<h2 class="head-break">Why not drop us a <span class="line">line</span>?</h2>
 
-        <div class="contact-info">
-        <!--Company contanct information, should have and Icon to represent each method of contact above the details. -->
-            <div class="contact-phone">
-            <!--Company Phone Number / with mobile phone icon-->
-                <i class="fas fa-mobile-alt fa-3x contact-mobile"></i>
-                <p>+07000000000</p>
-            </div>
-            <div class="contact-email">
-             <!--Company Email Address / with envelope icon-->
-                <i class="fas fa-envelope-open-text fa-3x contact-envelope"></i>
-                <p class="contact-para"><a href = "mailto: hello@ifelsecode.uk">hello@ifelsecode.uk</a></p>
-            </div>
-            <div class="contact-hours">
-            <!--Company business hours / with clock icon-->
-                <i class="fas fa-clock fa-3x contact-clock"></i>
-                <p class="contact-para">Mon - Fri 09:00 - 18:00</p>
-            </div>
-        </div>
+<div class="contact-info">
+    <div class="contact-phone">
+        <i class="fas fa-mobile-alt fa-3x contact-mobile"></i>
+        <p>+07000000000</p>
+    </div>
+    <div class="contact-email">
+        <i class="fas fa-envelope-open-text fa-3x contact-envelope"></i>
+        <p class="contact-para"><a href = "mailto: hello@ifelsecode.uk">hello@ifelsecode.uk</a></p>
+    </div>
+    <div class="contact-hours">
+        <i class="fas fa-clock fa-3x contact-clock"></i>
+        <p class="contact-para">Mon - Fri 09:00 - 18:00</p>
+    </div>
+</div>
     
 <main>
-       <!--Form for client, blogger, to submit for getting support purposes-->
-       <form action="#" method="POST">
+   <form action="#" method="POST">
         <div  class="form-contact">
             <input class="form-name" type="text" name="yourName" placeholder="Your Name" required>
-        <input  type="text" name="email" placeholder="Your Email" class="form-email" required>
+            <input  type="text" name="email" placeholder="Your Email" class="form-email" required>
         </div>
-        <div class="contact-form"><textarea wrap="hard" name="YourMessage" placeholder="Your Message" rows="10" cols="60" required class="form-message"></textarea> 
-        <input type="button" value="send" name="submit" class="form-send"></div>
-</form>
+        <div class="contact-form">
+            <textarea wrap="hard" name="YourMessage" placeholder="Your Message" rows="10" cols="60" required class="form-message"></textarea> 
+            <input type="button" value="send" name="submit" class="form-send">
+        </div>
+    </form>
 </main>
-</body>
-</html>
