@@ -36,8 +36,10 @@
 				<% if (!user) { %> <!-- if user jwt cookie does not exist -->
 				<li><a href="/login">Log In</a></li>
 				<li><a href="/signup">Sign Up</a></li>
-				<% } else { %>
+				<% } else if (user.role.admin || user.role.author) { %>
 					<li><a href="/dashboard">Dashboard</a></li>
+					<li><a href="/logout">Logout</a></li>
+				<% } else { %>
 					<li><a href="/logout">Logout</a></li>
 				<% } %>
 			</ul>
