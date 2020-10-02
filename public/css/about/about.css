@@ -14,6 +14,7 @@
 .about-intro{
     font-size: 17.5px;
     text-align: center;
+    color: #a9a9a9;
 }
 
 .about-description{
@@ -22,51 +23,51 @@
 }
 
 .about-body{
-    padding: 2rem 2rem 2rem 2rem;
-}
-
-h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: red;
+    padding: 3rem;
 }
 
 .about-name {
     font-size: 20px;
     text-align: center;
-    color: black;
+    color: #7bc86c;
     text-transform: uppercase;
     text-decoration: underline;
     font-weight: 600;
 }
 
-.container {
+.container-picture {
     width: 100%;
-    padding: 8px;
+    padding: 30px;
 }
 
-img {
+.about-picture {
     float: left;
     display: block;
-   width: 200px;
-   height: 200px;
-   margin: 1em auto;
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center center;
-   border-radius: 50%;
-   border: 5px solid lightseagreen;
+    width: 200px;
+    height: 200px;
+    margin: 1em auto;
+    border-radius: 50%;
+    border: 5px solid lightseagreen;
 }
 
 .text {
     display: flex;
     align-items: middle;
     vertical-align: middle;
-    padding: 50px;
-    font-size: 16px;
+    padding: 2rem;
+    padding-bottom: 2rem;
+    font-size: 12px;
     text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-style: italic;
 }
-
+ .project-contribution {
+     text-align: center;
+     font-size: 18px;
+     color: #DE3C4B;
+     font-weight: 900;
+ }
 
 
 
