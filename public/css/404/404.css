@@ -1,28 +1,37 @@
-body {
-    color: var(--brand-color);
+.pnf {
+	height: 550px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-h1 {
-    font-size: 100px;
-    font-weight: 800;
-    margin-bottom: 25px;
+.pnf--title {
+	font-size: 7.5rem;
+	font-weight: 600;
 }
 
-.image {
-    position: absolute;
-    top: 100px;
-    right: 100px;
+.pnf--sub-title {
+	font-size: 2.5rem;
 }
 
-ul {
-    color: blue;
+.pnf--description {
+	font-size: 1.5rem;
+	width: 55%;
+	text-align: center;
 }
 
-.container {
-    box-sizing: border-box;
-    width: 500px;
-    padding-left: 25px;
-    padding-right: 25px;
-    margin-left: 25px;
-    margin-right: auto;
+.pnf--button {
+	font-size: 1.5rem;
+	border-radius: 3rem;
+	padding: 1rem 3rem;
+	background-color: var(--brand-color);
+	color: white;
+	margin-top: 2rem;
+}
+
+.pnf--image {
+	position: absolute;
+	bottom: -5%;
+	right: -2.5%;
 }
