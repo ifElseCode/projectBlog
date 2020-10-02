@@ -27,7 +27,6 @@ app.set("layout", "layouts/main-layout");
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then(result => {
     console.log("Connected to Database");
-    // we'll listen for requests only once we've connected to the DB
     app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
   })
   .catch(err => console.log(err));
@@ -37,9 +36,10 @@ app.get("*", authMiddleware.checkUser);
 
 // HOME
 app.get("/", async (req, res) => {
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   try {
-    const blogs = await Blog.find();
-    res.render("home", {blogs});
+    const blogs = await Blog.find().sort({ date: -1 });
+    res.render("home", { blogs, months });
   }
   catch (err) {
     console.log(err);

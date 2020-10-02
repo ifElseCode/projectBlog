@@ -17,8 +17,7 @@
 	</tr>
 	<% blogs.forEach(blog => { %>
 	<tr>
-		<!--I've included the time here just to make sure these are ordered correctly. I was having some issues earlier-->
-		<td><%= `${blog.date.getHours()}:${blog.date.getMinutes()}:${blog.date.getSeconds()} on ${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %></td>
+		<td><%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %></td>
 		<td><%= blog.title %></td>
 		<td><%= blog.author %></td>
 		<td class="dashboard-blog-posts--actions">
