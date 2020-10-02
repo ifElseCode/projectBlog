@@ -23,7 +23,13 @@
       </div>
       <div class="dashboard-sidebar--info">
         <div><%= user.username %></div>
-        <div>Admin</div>
+        <% if (user.role.admin) { %>
+          <div>Admin</div>
+        <% } else if (user.role.author) { %>
+          <div>Author</div>
+        <% } else { %>
+          <div>Visitor</div>
+        <% } %>  
       </div>
     </div>
     <div class="dashboard-sidebar--nav">
@@ -33,22 +39,22 @@
           Home
         </div>
       </a>
-      <a href="/dashboard/user-roles">
+      <a href="/dashboard">
         <i class="fas fa-tachometer-alt"></i>
         <div>
           Dashboard
         </div>
       </a>
-      <a href="/dashboard/user-roles">
-        <i class="fa fa-users" aria-hidden="true"></i>
-        <div>
-          User Roles
-        </div>
-      </a>
-      <a href="/dashboard/blog-posts">
+      <a href="/dashboard/blogs">
         <i class="fa fa-book" aria-hidden="true"></i>
         <div>
-          Blog Post
+          Blog Posts
+        </div>
+      </a>
+      <a href="/dashboard/users">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <div>
+          Users
         </div>
       </a>
       <a href="/logout">

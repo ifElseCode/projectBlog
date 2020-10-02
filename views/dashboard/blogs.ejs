@@ -1,8 +1,8 @@
 <div class="dashboard-blog-posts--header">
 	<h1 class="dashboard-blog-posts--title">
-		Blog Post <span>All blog posts in the database</span>
+		Blog Posts <span>All blog posts in the database</span>
 	</h1>
-	<a href="/dashboard/blog-posts/create">
+	<a href="/dashboard/blogs/create">
 		<i class="fas fa-plus"></i>
 		Add Blog
 	</a>
@@ -22,12 +22,13 @@
 		<td><%= blog.author %></td>
 		<td class="dashboard-blog-posts--actions">
 			<a
-				href="/dashboard/blog-posts/edit/<%= blog.id %>"
+				href="/dashboard/blogs/edit/<%= blog.id %>"
 				class="dashboard-blog-posts--button dashboard-blog-posts--button__green"
 				>Edit</a
 			>
 			<form
 				class="dashboard-blog-posts--button dashboard-blog-posts--button__red"
+				data-doc="<%= blog.id %>"
 			>
 				Delete
 			</form>
@@ -35,3 +36,5 @@
 	</tr>
 	<% }) %>
 </table>
+
+<script src="/js/delete-blog.js"></script>

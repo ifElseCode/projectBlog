@@ -12,6 +12,7 @@
     "express-ejs-layouts": "^2.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.6",
+    "nodeman": "^1.1.2",
     "validator": "^13.1.17"
   },
   "devDependencies": {

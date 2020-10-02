@@ -1,0 +1,40 @@
+<h1>Dashboard: Users</h1>
+<div>
+  <% if (user.role.admin) { %>
+  <% users.forEach(user =>{ %>
+    <div style="border: 1px solid blue">
+      <p><%= user.username %></p>
+      <p><%= user.email %></p>
+      <% if (user.role.admin) { %>
+      <p>Admin</p>
+      <% } else if (user.role.author) { %>
+      <p>Author</p>
+      <% } %>
+      <ul style="background: #CCC">
+        <li><a class="admin" data-doc="<%= user.id %>">Make Admin</a></li>
+        <li><a class="author" data-doc="<%= user.id %>">Make Author</a></li>
+        <li><a class="delete" data-doc="<%= user.id %>">Delete</a></li>
+      </ul>
+    </div>
+  <% }) %>
+  <% } else { %>
+    <% users.forEach(user =>{ %>
+      <div style="border: 1px solid blue">
+        <p><%= user.username %></p>
+        <p><%= user.email %></p>
+        <% if (user.role.admin) { %>
+        <p>Admin</p>
+        <% } else if (user.role.author) { %>
+        <p>Author</p>
+        <% } %>
+        <ul style="background: #CCC">
+          <li>Make Admin</li> <!--these should be greyed out to indicate that they can't be clicked-->
+          <li>Make Author</li>
+          <li>Delete</li>
+        </ul>
+      </div>
+      <% }) %>
+  <% } %>
+</div>
+
+<script src="/js/users.js"></script>

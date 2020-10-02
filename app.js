@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 require("dotenv/config");
 const cookieParser = require("cookie-parser");
 const authMiddleware = require("./middleware/authMiddleware");
+const Blog = require("./models/blog");
 
 const expressLayouts = require("express-ejs-layouts");
 const aboutRouter = require("./routes/aboutRouter");
@@ -26,15 +27,24 @@ app.set("layout", "layouts/main-layout");
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then(result => {
     console.log("Connected to Database");
-    // we'll listen for requests only once we've connected to the DB
     app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
   })
   .catch(err => console.log(err));
 
 // Routes
 app.get("*", authMiddleware.checkUser);
+
 // HOME
-app.get("/", (req, res) => res.render("blog"));
+app.get("/", async (req, res) => {
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  try {
+    const blogs = await Blog.find().sort({ date: -1 });
+    res.render("home", { blogs, months });
+  }
+  catch (err) {
+    console.log(err);
+  }
+});
 
 // AUTHENTICATION
 app.use(authRouter);
