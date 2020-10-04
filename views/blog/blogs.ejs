@@ -1,6 +1,6 @@
 <% blogs.forEach(blog => { %>
 	
-		<p><a href="/blog/clicked"><%= blog.title %></a></p>
+		<p><a href="./blogs/<%= blog.id %>"><%= blog.title %></a></p>
 		<p><%= blog.subtitle %></p>
 		<p><%= blog.author %></p>
 		<p><%= blog.content %></p>

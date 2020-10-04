@@ -14,8 +14,8 @@ const blogs_get = async (req, res) => {
 const blog_get = async (req, res) => {
   const id = req.params.id;
     try {
-      const blogs = await Blog.findById(id);
-      res.render("blog/blog/:id", {blogs, id});
+      const blog = await Blog.findById(id);
+      res.render("blog/blog.ejs", {blog});
     }
     catch (err) {
       console.log(err);

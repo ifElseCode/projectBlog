@@ -17,7 +17,7 @@
 	</tr>
 	<% blogs.forEach(blog => { %>
 	<tr>
-		<td><a href="/blog/clicked"><%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %></a></td>
+		<td><a href="/blogs/<%= blog.id %>"><%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %></a></td>
 		<td><%= blog.title %></td>
 		<td><%= blog.author %></td>
 		<td class="dashboard-blog-posts--actions">
