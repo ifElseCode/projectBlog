@@ -11,10 +11,11 @@ const blogs_get = async (req, res) => {
   }
 }
 
-const blogs_single_get = async (req, res) => {
+const blog_get = async (req, res) => {
+  const id = req.params.id;
   try {
-    const blogs = await Blog.findById(id);
-    res.render("blog/blog.ejs", {blogs});
+    const blog = await Blog.findById(id);
+    res.render("blog/blog.ejs", {blog});
   }
   catch (err) {
     console.log(err);
@@ -23,5 +24,5 @@ const blogs_single_get = async (req, res) => {
 
 module.exports = {
   blogs_get,
-  blogs_single_get
+  blog_get
 }
