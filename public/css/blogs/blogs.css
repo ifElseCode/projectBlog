@@ -60,12 +60,15 @@
 }
 
 .blogs--content {
-	color: var(--grey);
-	font-size: 1.6rem;
 	margin-bottom: 1.5rem;
 }
 
 .blogs--link {
 	font-size: 1.5em;
 	color: var(--brand-color);
+}
+
+.blogs--content > p {
+	color: var(--grey);
+	font-size: 1.6rem;
 }
