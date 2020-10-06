@@ -1,8 +1,26 @@
 
-	
-    <p><%= blog.title %></p>
-    <p><%= blog.subtitle %></p>
-    <p><%= blog.author %></p>
-    <p><%= blog.content %></p>
-    <p><%= blog.date %></p>
-
+    <header class="blogs--header">
+        <h1>ifElse Top Blogs</h1>
+        <i class="far fa-envelope"></i>
+    </header>
+    
+    <section class="blogs--container">
+        <div class="blogs--blog">
+            <img
+                class="blogs--image"
+                src="https://stackify.com/wp-content/uploads/2018/08/Learn_Java_Tutorials-1280x720.png"
+                alt="An early logo of ifElseCode"
+            />
+            <h1 class="blogs--title">
+                <%= blog.title %>
+            </h1>
+            <div class="blogs--info">
+                <%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %> / by
+                <span><%= blog.author %></span>
+            </div>
+            <p class="blogs--content">
+                <%= blog.content %>
+            </p>
+            <button id="likes_count">LIKE</button>
+        </div>
+    </section>

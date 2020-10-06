@@ -12,16 +12,17 @@ const blogs_get = async (req, res) => {
 }
 
 const blog_get = async (req, res) => {
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const id = req.params.id;
-  try {
-    const blog = await Blog.findById(id);
-    res.render("blog/blog.ejs", {blog});
+    try {
+        const blog = await Blog.findById(id).sort({ date: -1 });
+        res.render("blog/blog.ejs", {blog, months});
+    } 
+    catch (err) {
+      console.log(err);
+    }
   }
-  catch (err) {
-    console.log(err);
-  }
-}
-
+ 
 module.exports = {
   blogs_get,
   blog_get

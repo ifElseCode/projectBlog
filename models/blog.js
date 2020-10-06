@@ -21,6 +21,10 @@ const blogSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    likes_count: {
+        type: Number,
+        require: false
     }
 });
 
