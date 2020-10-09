@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <section class="blogs--container">
 	<div class="blogs--blog">
 		<img
@@ -12,34 +11,23 @@
 			${blog.date.getFullYear()}` %> / by
 			<span><%= blog.author %></span>
 		</div>
-		<div class="blogs--content"><%- blog.content %></div>
-	</div>
+        <div class="blogs--content"><%- blog.content %></div>
+        <p id="counter">Likes</p>
+        <button id="myButton">Like</button>
+    </div>
+    <script> const button = document.getElementById('myButton');
+        button.addEventListener('click', function(e){
+            console.log('Liked');
+        fetch('/clicked', {method: 'POST'})
+        .then(function(response){
+            if(response.OK){
+                console.log('Liked');
+                return;
+            }
+            throw new Error('Request failed');
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+    })</script>
 </section>
-=======
-
-    <header class="blogs--header">
-        <h1>ifElse Top Blogs</h1>
-        <i class="far fa-envelope"></i>
-    </header>
-    
-    <section class="blogs--container">
-        <div class="blogs--blog">
-            <img
-                class="blogs--image"
-                src="https://stackify.com/wp-content/uploads/2018/08/Learn_Java_Tutorials-1280x720.png"
-                alt="An early logo of ifElseCode"
-            />
-            <h1 class="blogs--title">
-                <%= blog.title %>
-            </h1>
-            <div class="blogs--info">
-                <%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %> / by
-                <span><%= blog.author %></span>
-            </div>
-            <p class="blogs--content">
-                <%= blog.content %>
-            </p>
-            <button id="likes_count">LIKE</button>
-        </div>
-    </section>
->>>>>>> feature/addLike
