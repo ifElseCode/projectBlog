@@ -4,6 +4,7 @@
 </header>
 
 <section class="blogs--container">
+	<% for (let i = 0; i < 5; i++){ %>
 	<% blogs.map(blog => { %>
 
 	<div class="blogs--blog">
@@ -25,4 +26,5 @@
 	</div>
 
 	<% }) %>
+	<% } %>
 </section>

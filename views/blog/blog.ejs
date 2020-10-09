@@ -11,6 +11,23 @@
 			${blog.date.getFullYear()}` %> / by
 			<span><%= blog.author %></span>
 		</div>
-		<div class="blogs--content"><%- blog.content %></div>
-	</div>
+        <div class="blogs--content"><%- blog.content %></div>
+        <p id="counter">Likes</p>
+        <button id="myButton">Like</button>
+    </div>
+    <script> const button = document.getElementById('myButton');
+        button.addEventListener('click', function(e){
+            console.log('Liked');
+        fetch('/clicked', {method: 'POST'})
+        .then(function(response){
+            if(response.OK){
+                console.log('Liked');
+                return;
+            }
+            throw new Error('Request failed');
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+    })</script>
 </section>
