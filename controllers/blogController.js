@@ -1,4 +1,5 @@
 const Blog = require('../models/blog');
+const { db } = require('../models/blog');
 
 const blogs_get = async (req, res) => {
 	const months = [
@@ -46,8 +47,18 @@ const blog_get = async (req, res) => {
 		console.log(err);
 	}
 };
+const blog_like = (req, res) => {
+  const click = req.params.like;
+  try{ 
+    res.render('blog/blog.ejs', {like});
+  }
+  catch {
+    console.log(err);
+  }
+};
 
 module.exports = {
 	blogs_get,
-	blog_get,
+  blog_get,
+  blog_like
 };
