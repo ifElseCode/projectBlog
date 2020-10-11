@@ -4,9 +4,9 @@
 </header>
 
 <section class="blogs--container">
-	<% for (let i = 0; i < 5; i++){ %>
-	<% blogs.map(blog => { %>
 
+	<% blogs.slice(0, 5).map(blog => { %>
+	
 	<div class="blogs--blog">
 		<img
 			class="blogs--image"
@@ -26,5 +26,5 @@
 	</div>
 
 	<% }) %>
-	<% } %>
+	
 </section>
