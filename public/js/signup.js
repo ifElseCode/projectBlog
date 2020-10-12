@@ -22,14 +22,13 @@ form.addEventListener("submit", async (e) => {
       headers: { "Content-Type": "application/json" }
     });
     const data = await res.json();
-    console.log(data);
     if (data.errors) {
       usernameErrors.textContent = data.errors.username;
       emailErrors.textContent = data.errors.email;
       passwordErrors.textContent = data.errors.password;
     }
-    if (data.user) {
-      location.assign("/");
+    if (data) {
+      location.assign(data.redirect);
     }
   }
   catch (err) {
