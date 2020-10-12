@@ -2,7 +2,6 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 require("dotenv/config");
 const nodemailer = require("nodemailer");
-const { getMaxListeners } = require("../models/User");
 const ejs = require("ejs");
 
 const handleErrors = (err) => {
@@ -45,8 +44,8 @@ const signup_post = async (req, res) => {
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       auth: {
-        user: "scholtzschoolofmusic@gmail.com",
-        pass: "Dream_Theater3835",
+        user: process.env.EMAIL_ADDRESS,
+        pass: process.env.EMAIL_PASSWORD,
       }
     });
     ejs.renderFile("./views/emails/confirm.ejs", { username, id: user.id, uniqueNumber }, (err, data) => {
@@ -54,7 +53,7 @@ const signup_post = async (req, res) => {
         console.log(err)
       } else {
         transporter.sendMail({
-          from: "scholtzschoolofmusic@gmail.com",
+          from: "ifelsecode.verify@gmail.com",
           to: email,
           subject: `Email Confirmation for ${username}`,
           html: data
