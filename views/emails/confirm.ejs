@@ -1,0 +1,21 @@
+<head>
+  <style>
+    .myContainer {
+      color: #77c2b2;
+      width: 60%;
+      padding: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #77c2b2;
+    }
+  </style>
+</head>
+<div class="myContainer">
+  <p>Dear <%= username %>,</p>
+  <h1>Confirm your email below</h1>
+  <p>This email was sent from the projectBlog website when you signed up</p>
+  <p>Click the button below to confirm your email address:</p>
+  <button><a href="http://localhost:3000/signup/<%= uniqueNumber %>" target="_blank">Confirm Email</a></button>
+</div>
