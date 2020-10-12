@@ -1,6 +1,8 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 require("dotenv/config");
+const nodemailer = require("nodemailer");
+const { getMaxListeners } = require("../models/User");
 
 const handleErrors = (err) => {
   let errors = { username: "", email: "", password: "" };
@@ -33,16 +35,48 @@ const signup_get = (req, res) => res.render("auth/signup");
 
 const signup_post = async (req, res) => {
   const {username, email, password} = req.body;
+
+  const output = `
+    <h1>Confirm your email below</h1>
+    <p>This email was sent from the projectBlog website when you signed up</p>
+    <p>Click the button below to confirm your email address:</p>
+    <button><a href="localhost:3000">Confirm Email</a></button>
+  `;
+
   try {
-    const user = await User.create({ username, email, password });
-    const token = createToken(user);
-    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.status(201).json({ user: user._id, username: user.username });
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "scholtzschoolofmusic@gmail.com",
+        pass: "Dream_Theater3835",
+      }
+    });
+  
+    transporter.sendMail({
+      from: "scholtzschoolofmusic@gmail.com",
+      to: email,
+      subject: "Confirm Your Email Account",
+      html: output
+    }, (err, info) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(info);
+        console.log("Message sent: %s", info.messageId);
+      }
+    });
+
+    const user = await User.create({ username, email, password, verified: false });
+    // const token = createToken(user);
+    // res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
+    // res.status(201).json({ user: user._id, username: user.username });
   }
   catch (err) {
     const errors = handleErrors(err);
     res.status(400).json({ errors });
   }
+  
 };
 
 const login_get = (req, res) => res.render("auth/login");
@@ -59,7 +93,6 @@ const login_post = async (req, res) => {
     const errors = handleErrors(err);
     res.status(400).json({ errors });
   }
-
 };
 
 const logout_get = (req, res) => {

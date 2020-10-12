@@ -24,7 +24,8 @@ const userSchema = new Schema({
   role: {
     admin: Boolean,
     author: Boolean,
-  }
+  },
+  verified: Boolean
 });
 
 userSchema.pre("save", async function(next) {
