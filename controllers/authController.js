@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv/config");
 const nodemailer = require("nodemailer");
 const { getMaxListeners } = require("../models/User");
+const ejs = require("ejs");
 
 const handleErrors = (err) => {
   let errors = { username: "", email: "", password: "" };
@@ -34,50 +35,72 @@ const createToken = (id) => {
 const signup_get = (req, res) => res.render("auth/signup");
 
 const signup_post = async (req, res) => {
-  const {username, email, password} = req.body;
-
-  const output = `
-    <h1>Confirm your email below</h1>
-    <p>This email was sent from the projectBlog website when you signed up</p>
-    <p>Click the button below to confirm your email address:</p>
-    <button><a href="localhost:3000">Confirm Email</a></button>
-  `;
-
+  const { username, email, password } = req.body;
+  const secureNumber = () => {
+    return Math.floor(Math.random() * 10000);
+  }
+  const uniqueNumber = secureNumber();
   try {
-
+    const user = await User.create({ username, email, password, uniqueNumber });
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
       auth: {
         user: "scholtzschoolofmusic@gmail.com",
         pass: "Dream_Theater3835",
       }
     });
-  
-    transporter.sendMail({
-      from: "scholtzschoolofmusic@gmail.com",
-      to: email,
-      subject: "Confirm Your Email Account",
-      html: output
-    }, (err, info) => {
+    ejs.renderFile("./views/emails/confirm.ejs", { username, id: user.id, uniqueNumber }, (err, data) => {
       if (err) {
-        console.log(err);
+        console.log(err)
       } else {
-        console.log(info);
-        console.log("Message sent: %s", info.messageId);
+        transporter.sendMail({
+          from: "scholtzschoolofmusic@gmail.com",
+          to: email,
+          subject: `Email Confirmation for ${username}`,
+          html: data
+        }, (err, info) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(info);
+          }
+        });
       }
     });
-
-    const user = await User.create({ username, email, password, verified: false });
-    // const token = createToken(user);
-    // res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-    // res.status(201).json({ user: user._id, username: user.username });
+    res.status(200).json({ redirect: `/signup/confirm/${email}` });
   }
   catch (err) {
     const errors = handleErrors(err);
     res.status(400).json({ errors });
   }
-  
 };
+
+const signup_confirm_get = (req, res) => {
+  const email = req.params.id;
+  res.render("email-confirm", { email });
+}
+
+const signup_uniqueNumber_get = async (req, res) => {
+  const uniqueNumber = req.params.uniqueNumber;
+  try {
+    const user = await User.findOne({ uniqueNumber });
+    if (user) {
+      User.findByIdAndUpdate(user.id, { verified: true })
+        .then(result => {
+          const token = createToken(user);
+          res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
+          res.status(201).redirect("/");
+        })
+        .catch(err => console.log(err));
+      
+    } else {
+      res.send("USER NOT FOUND! Aaaaah!");
+    }
+  }
+  catch (err) {
+    console.log(err);
+  }
+}
 
 const login_get = (req, res) => res.render("auth/login");
 
@@ -103,6 +126,8 @@ const logout_get = (req, res) => {
 module.exports = {
   signup_get,
   signup_post,
+  signup_confirm_get,
+  signup_uniqueNumber_get,
   login_get,
   login_post,
   logout_get

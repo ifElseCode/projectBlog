@@ -25,7 +25,11 @@ const userSchema = new Schema({
     admin: Boolean,
     author: Boolean,
   },
-  verified: Boolean
+  verified: {
+    type: Boolean,
+    default: false
+  },
+  uniqueNumber: Number
 });
 
 userSchema.pre("save", async function(next) {
