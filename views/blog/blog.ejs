@@ -13,22 +13,7 @@
 		</div>
         <div class="blogs--content"><%- blog.content %></div>
         <p id="counter"><%= blog.like %></p>
-         <button id="myButton">Like</button>
+         <button id="myButton"><a href="./<%= blog.id %>">Like</a></button>
      </div>
     </div>
-    <script> const button = document.getElementById('myButton');
-        button.addEventListener('click', function(e){
-            console.log('Liked');
-        fetch('/clicked', {method: 'POST'})
-        .then(function(response){
-            if(response.OK){
-                console.log('Liked');
-                return;
-            }
-            throw new Error('Request failed');
-        })
-        .catch(function(error){
-            console.log(error);
-        });
-    })</script>
 </section>

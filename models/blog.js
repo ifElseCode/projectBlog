@@ -24,7 +24,7 @@ const blogSchema = new Schema({
     },
     like: {
         type: Number,
-        require: false
+        required: true
     }
 });
 

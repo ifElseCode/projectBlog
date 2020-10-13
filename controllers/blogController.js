@@ -47,18 +47,18 @@ const blog_get = async (req, res) => {
 		console.log(err);
 	}
 };
-const blog_like = (req, res) => {
-  const click = req.params.like;
-  try{ 
-    res.render('blog/blog.ejs', {like});
-  }
-  catch {
-    console.log(err);
-  }
+const blog_like_patch = async (req, res) => {	
+	const id = req.params.id;
+	try{
+		const blog = await Blog.findOneAndUpdate(id, {$inc: {quantity : 1, "blog.like" : 1}})
+		res.render ('/blog.ejs', {blog})
+	} catch (err) {
+		console.log(err);
+	}	
 };
 
 module.exports = {
 	blogs_get,
-  blog_get,
-  blog_like
+    blog_get,
+  	blog_like_patch
 };
