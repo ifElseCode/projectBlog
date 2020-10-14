@@ -13,7 +13,20 @@
 		</div>
         <div class="blogs--content"><%- blog.content %></div>
         <p id="counter"><%= blog.like %></p>
-         <button id="myButton"><a href="./<%= blog.id %>">Like</a></button>
+         <button class="myButton" onclick="add(this)"><a href="./<%= blog.id %>">Like</a></button>
      </div>
     </div>
+   <script>const button = document.querySelector('myButton'); 
+                if(button){
+                    button.addEventListener('click', function(e) { 
+                    console.log('Liked'); 
+                    fetch('/like/${id}', {method: 'PATCH'})})
+                    .then(function(response){
+                        console.log('Liked')
+                    })
+                    .catch(function(error){
+                        console.log(error);
+                    })
+                };
+             </script>
 </section>

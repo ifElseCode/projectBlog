@@ -49,9 +49,10 @@ const blog_get = async (req, res) => {
 };
 const blog_like_patch = async (req, res) => {	
 	const id = req.params.id;
+	const like = req.params.like;
 	try{
-		const blog = await Blog.findOneAndUpdate(id, {$inc: {quantity : 1, "blog.like" : 1}})
-		res.render ('/blog.ejs', {blog})
+		like = await like.findByIdAndUpdate(id,{$inc: {quantity : 1, "blog.like" : 1}})
+		res.render ('/blog.ejs', {like})
 	} catch (err) {
 		console.log(err);
 	}	
