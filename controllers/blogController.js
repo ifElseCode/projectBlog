@@ -1,3 +1,4 @@
+const { db } = require('../models/blog');
 const Blog = require('../models/blog');
 
 const blogs_get = async (req, res) => {
@@ -47,7 +48,20 @@ const blog_get = async (req, res) => {
 	}
 };
 
+const blog_like = ('/liked', (req, res) => {
+  const click = {clickTime: newDate()};
+  console.log(click)
+
+  db.collection('clicks').insertOne (click(err, result) , {
+    if(err){
+      return console.log(err);
+    }
+  })
+})
+
+
 module.exports = {
 	blogs_get,
-	blog_get,
+  blog_get,
+  blog_like
 };
