@@ -12,21 +12,22 @@
 			<span><%= blog.author %></span>
 		</div>
         <div class="blogs--content"><%- blog.content %></div>
-        <p id="counter"><%= blog.like %></p>
-         <button class="myButton"><a href="#">Like</a></button>
-     </div>
+        <p id="counter">Likes</p>
+        <button id="myButton">Like</button>
     </div>
-   <script>const button = document.querySelector('.myButton'); 
-                if(button){
-                    button.addEventListener('click', function(e) { 
-                    console.log('Liked'); 
-                    fetch('/like/${id}', {method: 'PATCH'})})
-                    .then(function(response){
-                        console.log('Liked')
-                    })
-                    .catch(function(error){
-                        console.log(error);
-                    })
-                };
-             </script>
+    <script> const button = document.getElementById('myButton');
+        button.addEventListener('click', function(e){
+            console.log('Liked');
+        fetch('/clicked', {method: 'POST'})
+        .then(function(response){
+            if(response.OK){
+                console.log('Liked');
+                return;
+            }
+            throw new Error('Request failed');
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+    })</script>
 </section>

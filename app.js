@@ -61,20 +61,6 @@ app.get("/contact", (req, res) => res.render("contact"));
 // DASHBOARD
 app.use("/dashboard", dashboardRouter);
 
-//LIKED
-app.post('/cliked', (req, res) => {
-  const click = {clickTime: new Date()};
-  console.log(click);
-  console.log(db);
-
-  db.collection('clicks').save(click, (err, result) =>{
-    if(err){
-      return console.log(err);
-    }
-    console.log('click added to db');
-    res.sendStatus(210);
-  });
-});
 
 // 404 error
 app.use((req, res) => res.render("404"));

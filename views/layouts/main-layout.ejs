@@ -47,9 +47,11 @@
 			<div class="main-nav--middle">
 				<h1>ifElseCode</h1>
 				<h2>Developer Group</h2>
-				<% if (user) { %>
+				<% if (user && user.verified === true) { %>
 				<!-- if user jwt cookie does exist -->
 				<p>Logged in as <%= user.username %></p>
+				<% } else if (user && user.verified === false) { %>
+				<p>Verify Your Email Address</p>
 				<% } %>
 			</div>
 			<div class="main-nav--bottom">

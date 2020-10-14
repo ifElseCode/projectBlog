@@ -1,3 +1,4 @@
+const { db } = require('../models/blog');
 const Blog = require('../models/blog');
 const { db } = require('../models/blog');
 
@@ -55,8 +56,10 @@ const blog_like_patch = async (req, res) => {
 		res.render ('/blog.ejs', {like})
 	} catch (err) {
 		console.log(err);
-	}	
-};
+	}};
+
+
+
 
 module.exports = {
 	blogs_get,
