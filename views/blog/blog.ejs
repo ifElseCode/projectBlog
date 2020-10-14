@@ -13,10 +13,10 @@
 		</div>
         <div class="blogs--content"><%- blog.content %></div>
         <p id="counter"><%= blog.like %></p>
-         <button class="myButton" onclick="add(this)"><a href="./<%= blog.id %>">Like</a></button>
+         <button class="myButton"><a href="#">Like</a></button>
      </div>
     </div>
-   <script>const button = document.querySelector('myButton'); 
+   <script>const button = document.querySelector('.myButton'); 
                 if(button){
                     button.addEventListener('click', function(e) { 
                     console.log('Liked'); 
