@@ -12,22 +12,21 @@
 			<span><%= blog.author %></span>
 		</div>
         <div class="blogs--content"><%- blog.content %></div>
-        <p id="counter">Likes</p>
-        <button id="myButton">Like</button>
+        <p id="counter"><%= blog.likes %></p>
+         <button class="myButton" data-doc="<%= blog.id %>">Like</button>
+     </div>
     </div>
-    <script> const button = document.getElementById('myButton');
-        button.addEventListener('click', function(e){
-            console.log('Liked');
-        fetch('/clicked', {method: 'POST'})
-        .then(function(response){
-            if(response.OK){
-                console.log('Liked');
-                return;
-            }
-            throw new Error('Request failed');
-        })
-        .catch(function(error){
-            console.log(error);
-        });
-    })</script>
+   <script>const button = document.querySelector('.myButton'); 
+                    button.addEventListener('click', (e) => { 
+                        const id = button.dataset.doc;
+                        const endpoint =`/blogs/like/${id}`;
+                        fetch(endpoint, { method: 'PATCH' })
+                        .then(response => {
+                            window.location.assign(`/blogs/${id}`);
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                    });
+    </script>
 </section>

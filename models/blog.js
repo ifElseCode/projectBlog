@@ -18,9 +18,9 @@ const blogSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  likes_count: {
+  likes: {
     type: Number,
-    required: false
+    defaut: 0
   }
 });
 
