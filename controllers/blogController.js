@@ -1,6 +1,5 @@
 const { db } = require('../models/blog');
 const Blog = require('../models/blog');
-const { db } = require('../models/blog');
 
 const blogs_get = async (req, res) => {
 	const months = [
@@ -50,16 +49,17 @@ const blog_get = async (req, res) => {
 };
 const blog_like_patch = async (req, res) => {	
 	const id = req.params.id;
-	const like = req.params.like;
 	try{
-		like = await like.findByIdAndUpdate(id,{$inc: {quantity : 1, "blog.like" : 1}})
-		res.render ('/blog.ejs', {like})
+		const blog = await Blog.findById(id);
+		const likes = blog.likes += 1;
+		const updatedBlog = await Blog.findByIdAndUpdate(id, { likes });
+		console.log(blog.likes);
+		// res.render ('/blog.ejs', likes++);
+		console.log(updatedBlog.likes);
+		res.status(200).json({ updatedBlog });
 	} catch (err) {
 		console.log(err);
 	}};
-
-
-
 
 module.exports = {
 	blogs_get,
