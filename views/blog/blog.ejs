@@ -1,8 +1,32 @@
-<% blogs.forEach(blog => { %>
-	
-    <p><%= blog.title %></p>
-    <p><%= blog.subtitle %></p>
-    <p><%= blog.author %></p>
-    <p><%= blog.content %></p>
-    <p><%= blog.date %></p>
-<% }); %>
+<section class="blogs--container">
+	<div class="blogs--blog">
+		<img
+			class="blogs--image"
+			src="https://stackify.com/wp-content/uploads/2018/08/Learn_Java_Tutorials-1280x720.png"
+			alt="An early logo of ifElseCode"
+		/>
+		<h1 class="blogs--title"><%= blog.title %></h1>
+		<div class="blogs--info">
+			<%= `${blog.date.getDate()} ${months[blog.date.getMonth()]}
+			${blog.date.getFullYear()}` %> / by
+			<span><%= blog.author %></span>
+		</div>
+        <div class="blogs--content"><%- blog.content %></div>
+        <p id="counter"><%= blog.likes %></p>
+         <button class="myButton" data-doc="<%= blog.id %>">Like</button>
+     </div>
+    </div>
+   <script>const button = document.querySelector('.myButton'); 
+                    button.addEventListener('click', (e) => { 
+                        const id = button.dataset.doc;
+                        const endpoint =`/blogs/like/${id}`;
+                        fetch(endpoint, { method: 'PATCH' })
+                        .then(response => {
+                            window.location.assign(`/blogs/${id}`);
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                    });
+    </script>
+</section>
