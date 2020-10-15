@@ -37,7 +37,7 @@
 
 .container-picture {
     width: 100%;
-    padding: 30px;
+    padding: 20px;
 }
 
 .about-picture {
@@ -62,10 +62,11 @@
     margin-bottom: 2rem;
     font-style: italic;
 }
- .project-contribution {
+
+.project-contribution {
      text-align: center;
      font-size: 18px;
-     color: #DE3C4B;
+     color: lightseagreen;
      font-weight: 900;
  }
 
