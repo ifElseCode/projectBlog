@@ -1,0 +1,45 @@
+
+    <link rel="stylesheet" href="../css/layouts/user-profile.css">
+    <main class="user-container">
+        <header>
+            <h1 class="user-header">Welcome to ifElseCode!</h1>
+        </header>
+        <section>
+            <h2 class="profile-header">-User Profile-</h2>
+            <form action="#" method="GET">
+                <div>
+                    <label for="username">Username:</label>
+                    <br>
+                    <input class="user-info-form" type="text" name="username" id="username" placeholder="Enter your Username." required>
+                </div>
+                <br>
+                <div>
+                    <label for="email">Email:</label>
+                    <br>
+                    <input class="user-info-form" type="text" name="email" id="email" placeholder="Enter your email address. " required>
+                </div>
+                <br>
+                <div>
+                    <label for="password">Password:</label>
+                    <br>
+                    <input class="user-info-form" type="text" name="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <br>
+                <div>
+                    <label for="confirm">Confirm Password:</label>
+                    <br>
+                    <input class="user-info-form" type="text" name="confirm-pass" id="confirm" placeholder="Confirm Password" required>
+                </div>
+                <br>
+                <div>
+                    <input type="checkbox" name="admin" value="user-check" id="admin" class="check" checked required>
+                    <label for="admin" class="check-label">Is Admin</label>
+                    <input class="margin-left check" type="checkbox" name="creator" value="user-check" id="creator" required>
+                    <label for="creator" class="check-label">Is Creator</label>
+                </div>
+                <button class="user-button">Update</button>
+                <button class="user-button">Cancel</button>
+            </form>
+        </section>
+    </main>
+
