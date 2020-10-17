@@ -1,0 +1,77 @@
+.about-pageundertone {
+    background: lightgray;
+  }
+
+.about-heading {
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 400;
+    }
+
+.about-intro{
+    font-size: 17.5px;
+    text-align: center;
+    color: #a9a9a9;
+}
+
+.about-description{
+    font-size: 16px;
+    text-align: center;
+}
+
+.about-body{
+    padding: 3rem;
+}
+
+.about-name {
+    font-size: 20px;
+    text-align: center;
+    color: #7bc86c;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.container-picture {
+    width: 100%;
+    padding: 20px;
+}
+
+.about-picture {
+    float: left;
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 1em auto;
+    border-radius: 50%;
+    border: 5px solid lightseagreen;
+}
+
+.text {
+    display: flex;
+    align-items: middle;
+    vertical-align: middle;
+    padding: 2rem;
+    padding-bottom: 2rem;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.project-contribution {
+     text-align: center;
+     font-size: 18px;
+     color: lightseagreen;
+     font-weight: 900;
+ }
+
+
+
+
+
+
