@@ -1,0 +1,68 @@
+/* Styles for Blog post Listings */
+.dashboard-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.5rem;
+}
+
+.dashboard-header__title {
+	font-size: 2.5rem;
+	letter-spacing: 0.1rem;
+}
+
+.dashboard-header__title > span {
+	font-size: 1.5rem;
+	opacity: 0.8;
+}
+
+
+.table {
+	width: 100%;
+}
+
+.table__head {
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+}
+
+.table__head, .table__data{
+	font-size: 1.25rem;
+	padding: 1rem;
+	width: 25%;
+}
+
+.table__row:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.table__header {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #2f477b;
+	color: white;
+}
+
+.btn {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #212529;
+    text-align: center;
+    /* padding: .5rem .75rem; */
+	padding: 1rem 1.5rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+	cursor: pointer;
+}
+
+.btn--dark {
+    color: #fff;
+    background-color: #343a40;
+}
+
+.btn--red {
+    color: #fff;
+    background-color: #dc3545;
+}
+
