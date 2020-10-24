@@ -1,6 +1,8 @@
-body {
+ /* Extra small devices (portrait phones, less than 576px) */
+ /* No media query for `xs` since this is the default in Bootstrap */
+ body {
 	background-color: #f2f0f2;
-	padding: 6rem 9rem;
+	padding: 3rem 1rem;
 }
 
 .main-nav,
@@ -12,20 +14,15 @@ body {
 }
 
 .main-nav {
-	background-color: var(--bg-color);
-	position: fixed;
-	width: 350px;
-	height: 550px;
-	border-radius: 2rem;
+	background-color: white;
 	overflow: hidden;
-	display: flex;
-	flex-direction: column;
+	position: relative;
+	margin-bottom: 2.5rem;
 }
 
 .main-nav--top {
 	width: 100%;
-	height: 50%;
-	background-color: #8fa0c7;
+	height: 350px;
 	object-fit: cover;
 }
 
@@ -34,7 +31,7 @@ body {
 	display: none;
 	justify-content: space-evenly;
 	align-items: center;
-	height: 15%;
+	height: 60px;
 }
 
 .main-nav--links.active {
@@ -49,8 +46,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 30%;
 	align-items: center;
+	height: 150px;
 	border-bottom: 1px dotted var(--grey);
 }
 
@@ -68,7 +65,7 @@ body {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	height: 20%;
+	height: 100px;
 	color: #fff;
 	font-size: 1.5rem;
 }
@@ -98,45 +95,12 @@ body {
 	background-color: #333333;
 }
 
-.main-body {
-	background-color: #fff;
-	margin-left: 380px;
-	margin-bottom: 5rem;
-	border-radius: 2rem;
-	position: relative;
-	overflow: hidden;
-}
-
-.main-footer {
-	margin-left: 380px;
-	height: 175px;
-	background-image: url('https://cdn.discordapp.com/attachments/752950996707311616/759534699512463400/unknown.png');
-	font-size: 1.5rem;
-	letter-spacing: 0.1rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 2rem;
-}
-
-.main-footer > ul {
-	display: flex;
-	justify-content: space-between;
-	width: 22.5%;
-	margin-bottom: 2rem;
-}
-
-.main-footer > div {
-	color: var(--grey);
-}
-
-/* Hamburger Menu */
 .main-nav--burger {
 	background: var(--brand-color);
 	height: 50px;
 	width: 50px;
 	position: absolute;
+	top: 0;
 	right: 0;
 	display: flex;
 	flex-direction: column;
@@ -150,4 +114,101 @@ body {
 	height: 2px;
 	width: 22.5px;
 	margin: 3px;
+}
+
+.main-body {
+	background-color: #fff;
+	margin-bottom: 5rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.main-footer {
+	height: 150px;
+	background-image: url('https://cdn.discordapp.com/attachments/752950996707311616/759534699512463400/unknown.png');
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-footer > ul {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+	width: 55%;
+}
+
+.main-footer > ul > li, .main-footer > div {
+	font-size: 1.25rem;
+	letter-spacing: 0.1rem;
+	text-align: center;
+}
+
+.main-footer > div {
+	color: var(--grey);
+}
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 	
+	.main-footer > ul {
+		width: 35%;
+	}
+	
+	.main-footer > ul > li, .main-footer > div {
+		font-size: 1.50rem;
+	}
+	
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+	.main-nav--top {
+		height: 450px;
+	}
+
+	.main-footer > ul {
+		width: 27.5%;
+	}
+	
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+	.main-nav--top {
+		height: 550px;
+	}
+
+	.main-footer > ul {
+		width: 20.5%;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+	body {
+		padding: 6rem 9rem;
+	}
+
+	.main-nav {
+		position: fixed;
+		width: 350px;
+	}
+	
+	.main-nav--top {
+		height: 275px;
+	}
+	
+	.main-body {
+		margin-left: 380px;
+		margin-bottom: 5rem;
+	}
+
+	.main-footer {
+		margin-left: 380px;
+	}
+
+	.main-footer > ul {
+		width: 30.5%;
+	}
 }
