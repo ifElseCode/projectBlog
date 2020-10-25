@@ -4,7 +4,6 @@
 </header>
 
 <section class="blogs--container">
-<<<<<<< HEAD
 
 	<% blogs.slice(0, 5).map(blog => { %>
 	
@@ -28,30 +27,4 @@
 
 	<% }) %>
 	
-=======
-	<% for (let i = 0; i < 5; i++){ %>
-		<% blogs.map(blog => { %>
-			<div class="blogs--blog">
-				<img
-					class="blogs--image"
-					src="https://stackify.com/wp-content/uploads/2018/08/Learn_Java_Tutorials-1280x720.png"
-					alt="An early logo of ifElseCode"
-				/>
-				<h1 class="blogs--title"><%= blog.title %></h1>
-				<div class="blogs--info">
-					<%= `${blog.date.getDate()} ${months[blog.date.getMonth()]}
-					${blog.date.getFullYear()}` %> / by
-					<span><%= blog.author %></span>
-				</div>
-				<div class="blogs--content">
-					<%- blog.content.substring(0, 450) %>...
-				</div>
-				<a class="blogs--link" href="./blogs/<%= blog.id %>">Read More</a>
-			</div>
-		
-		<% }); %>
-	
-	<% } %>
-		
->>>>>>> master
 </section>
