@@ -24,7 +24,7 @@ app.set("view engine", "ejs");
 app.set("layout", "layouts/main-layout");
 
 // Connect to Database
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
   .then(result => {
     console.log("Connected to Database");
     app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
