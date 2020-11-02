@@ -1,32 +1,60 @@
 <section class="blogs--container">
-	<div class="blogs--blog">
-		<img
-			class="blogs--image"
-			src="https://stackify.com/wp-content/uploads/2018/08/Learn_Java_Tutorials-1280x720.png"
-			alt="An early logo of ifElseCode"
-		/>
-		<h1 class="blogs--title"><%= blog.title %></h1>
-		<div class="blogs--info">
-			<%= `${blog.date.getDate()} ${months[blog.date.getMonth()]}
-			${blog.date.getFullYear()}` %> / by
-			<span><%= blog.author %></span>
-		</div>
-        <div class="blogs--content"><%- blog.content %></div>
-        <p id="counter"><%= blog.likes %></p>
-         <button class="myButton" data-doc="<%= blog.id %>">Like</button>
-     </div>
+  <div class="blogs--blog">
+    <img
+      class="blogs--image"
+      src="https://stackify.com/wp-content/uploads/2018/08/Learn_Java_Tutorials-1280x720.png"
+      alt="An early logo of ifElseCode"
+    />
+    <h1 class="blogs--title"><%= blog.title %></h1>
+    <div class="blogs--info">
+      <%= `${blog.date.getDate()} ${months[blog.date.getMonth()]}
+      ${blog.date.getFullYear()}` %> / by
+      <span><%= blog.author %></span>
     </div>
-   <script>const button = document.querySelector('.myButton'); 
-                    button.addEventListener('click', (e) => { 
-                        const id = button.dataset.doc;
-                        const endpoint =`/blogs/like/${id}`;
-                        fetch(endpoint, { method: 'PATCH' })
-                        .then(response => {
-                            window.location.assign(`/blogs/${id}`);
-                        })
-                        .catch(error => {
-                            console.log(error);
-                        });
-                    });
-    </script>
+    <div class="blogs--content"><%- blog.content %></div>
+
+    <% if (user) { %>
+      <% if (blog.likes.includes(user.email)) { %>
+          <p>Liked</p>
+        <% } else { %>
+          <button class="myButton" data-doc="<%= blog.id %>" data-email="<%= user.email %>">Like</button>
+        <% } %>
+        <% } else { %>
+        <p><a href="/login">Log in</a> to like this blog</p>
+        <% } %>
+
+        <p>Likes: <%= blog.likes.length %></p>
+    </div>
+  </div>
+
 </section>
+<script>
+
+  const button = document.querySelector('.myButton');
+
+  button.addEventListener('click', async (e) => {
+
+    const id = button.dataset.doc;
+    const email = button.dataset.email;
+    const endpoint =`/blogs/like/${id}`;
+    console.log(email);
+    try {
+      const res = await fetch(endpoint, {
+        method: 'PATCH',
+        body: JSON.stringify({ email }),
+        headers: { "Content-Type": "application/json" }
+      });
+
+      const data = await res.json();
+      if (data.error) {
+
+      }
+      location.assign(`/blogs/${id}`);
+    }
+    catch (err) {
+      console.log(err);
+    }
+
+  });
+
+</script>
