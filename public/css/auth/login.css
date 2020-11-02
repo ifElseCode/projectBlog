@@ -1,10 +1,3 @@
-:root {
-    --bg-color: #fff;
-    --brand-color: #77c2b2;
-    --black: #171717;
-    --grey: #b9b8b9;
-  }
-  
   * {
     box-sizing: border-box;
     margin: 0;

@@ -18,11 +18,11 @@
 
 <body>
   <div class="dashboard-sidebar">
-    <div class="dashboard-sidebar--user">
-      <div class="dashboard-sidebar--initials">
+    <div class="dashboard-sidebar__user">
+      <div class="dashboard-sidebar__initials">
         <%= user.username.split(" ").map(name => name[0]).join("") %>
       </div>
-      <div class="dashboard-sidebar--info">
+      <div class="dashboard-sidebar__info">
         <div><%= user.username %></div>
         <% if (user.role.admin) { %>
           <div>Admin</div>
@@ -32,8 +32,13 @@
           <div>Visitor</div>
         <% } %>  
       </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-    <div class="dashboard-sidebar--nav">
+    <div class="dashboard-sidebar__nav">
       <a href="/">
         <i class="fa fa-home" aria-hidden="true"></i>
         <div>
