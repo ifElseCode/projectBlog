@@ -1,41 +1,29 @@
 <link rel="stylesheet" href="/css/contact/contact.css">
-<div class="head">
-    <div class="head-contact">
-        <h1>ifElse Contact</h1>
-    </div>
-    <div class="head-home">
-        <a href="/"><i class="fas fa-home fa-3x"></i></a>
-    </div>
-</div>
-
-<hr class="h-break">
-
-<h2 class="head-break">Why not drop us a <span class="line">line</span>?</h2>
-
-<div class="contact-info">
-    <div class="contact-phone">
-        <i class="fas fa-mobile-alt fa-3x contact-mobile"></i>
-        <p>+07000000000</p>
-    </div>
-    <div class="contact-email">
-        <i class="fas fa-envelope-open-text fa-3x contact-envelope"></i>
-        <p class="contact-para"><a href = "mailto: hello@ifelsecode.uk">hello@ifelsecode.uk</a></p>
-    </div>
-    <div class="contact-hours">
-        <i class="fas fa-clock fa-3x contact-clock"></i>
-        <p class="contact-para">Mon - Fri 09:00 - 18:00</p>
-    </div>
-</div>
-    
 <main>
-   <form action="#" method="POST">
-        <div  class="form-contact">
-            <input class="form-name" type="text" name="yourName" placeholder="Your Name" required>
-            <input  type="text" name="email" placeholder="Your Email" class="form-email" required>
-        </div>
-        <div class="contact-form">
-            <textarea wrap="hard" name="YourMessage" placeholder="Your Message" rows="10" cols="60" required class="form-message"></textarea> 
-            <input type="button" value="send" name="submit" class="form-send">
-        </div>
-    </form>
-</main>
+    <section class="contact-container ">
+        <header class="contact-header">
+            <h1 class="contact-h1">ifElse Contact</h1>
+            <a href="/"><i class="fas fa-home fa-3x contact-home-icon"></i></a>
+        </header>
+        <hr class="h-break">
+        <h2 class="contact-head2">Why not drop us a <span class="contact-line">line</span>?</h2>
+        <article class="contact-info">
+            <i class="fas fa-mobile-alt fa-3x contact-mobile"></i>
+            <p class="contact-para">+07000000000</p>
+            <i class="fas fa-envelope-open-text fa-3x contact-envelope"></i>
+            <p class="contact-para"><a href = "mailto: hello@ifelsecode.uk">hello@ifelsecode.uk</a></p>
+            <i class="fas fa-clock fa-3x contact-clock"></i>
+            <p class="contact-para">Mon - Fri 09:00 - 18:00</p>
+        </article>
+    </section>
+    <section class="form-contact">
+        <form action="#" method="POST">
+            <div class="contact-form">
+                <input class="form-name" type="text" name="yourName" placeholder="Your Name" required>
+                <input class="form-email" type="text" name="email" placeholder="Your Email" required>
+                <textarea class="form-message" wrap="hard" name="YourMessage" placeholder="Your Message" rows="10" cols="60" required></textarea> 
+                <input type="button" value="Send" name="submit" class="form-send">
+            </div>         
+        </form>
+    </section>
+</main>    
