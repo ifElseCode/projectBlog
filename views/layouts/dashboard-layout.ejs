@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/css/helpers/variables.css">
   <link rel="stylesheet" href="/css/layouts/dashboard-layout.css">
   <link rel="stylesheet" href="/css/dashboard/blog-posts.css">
+  <link rel="stylesheet" href="/css/dashboard/table.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
     crossorigin="anonymous" />
@@ -17,11 +18,11 @@
 
 <body>
   <div class="dashboard-sidebar">
-    <div class="dashboard-sidebar--user">
-      <div class="dashboard-sidebar--initials">
+    <div class="dashboard-sidebar__user">
+      <div class="dashboard-sidebar__initials">
         <%= user.username.split(" ").map(name => name[0]).join("") %>
       </div>
-      <div class="dashboard-sidebar--info">
+      <div class="dashboard-sidebar__info">
         <div><%= user.username %></div>
         <% if (user.role.admin) { %>
           <div>Admin</div>
@@ -31,8 +32,13 @@
           <div>Visitor</div>
         <% } %>  
       </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-    <div class="dashboard-sidebar--nav">
+    <div class="dashboard-sidebar__nav">
       <a href="/">
         <i class="fa fa-home" aria-hidden="true"></i>
         <div>
