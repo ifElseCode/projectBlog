@@ -1,77 +1,102 @@
-.about-pageundertone {
-    background: lightgray;
-  }
+about-body{
+    padding: 1.5em;
+}
 
 .about-heading {
-    font-size: 30px;
+    font-size: 3em;
     text-align: center;
     color: black;
     text-transform: uppercase;
     text-decoration: underline;
-    font-weight: 400;
+    font-weight: 650;
+    padding-top: 1em;
+    font-family: 'Alegreya', serif;
     }
 
 .about-intro{
-    font-size: 17.5px;
+    font-size: 1.75em;
+    font-style: italic;
     text-align: center;
-    color: #a9a9a9;
+    color: #707070;
+    padding: 1.5em;
 }
 
 .about-description{
-    font-size: 16px;
+    font-size: 1.75em;
     text-align: center;
-}
-
-.about-body{
-    padding: 3rem;
+    padding: 2em;
 }
 
 .about-name {
-    font-size: 20px;
+    font-size: 3em;
     text-align: center;
-    color: #7bc86c;
-    text-transform: uppercase;
+    color: var(--brand-color);
     text-decoration: underline;
     font-weight: 600;
 }
 
-.container-picture {
-    width: 100%;
-    padding: 20px;
+.about-role {
+    font-size: 2em;
+    text-align: center;
+    color: salmon;
+    text-decoration: underline;
+    font-weight: 300;
+}
+
+.person-container {
+    padding: 0.75rem;
 }
 
 .about-picture {
-    float: left;
     display: block;
-    width: 200px;
-    height: 200px;
-    margin: 1em auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    border: 5px solid lightseagreen;
+    border: 2px solid var(--brand-color);
 }
 
-.text {
-    display: flex;
-    align-items: middle;
-    vertical-align: middle;
-    padding: 2rem;
-    padding-bottom: 2rem;
-    font-size: 12px;
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+.about-person-info {
+    font-size: 1.5em;
     font-style: italic;
+    text-align: center;
+    color: seagreen;
+    padding: 1.5em;
 }
 
-.project-contribution {
-     text-align: center;
-     font-size: 18px;
-     color: lightseagreen;
-     font-weight: 900;
- }
+.about-hyperlink {
+    color: maroon;
+    font-weight: 600;
+}
 
+.about-special-thanks {
+    font-size: 2.25em;
+    text-align: center;
+    color: green;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 350;
+    padding-top: 1em;
+}
 
+.head {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
 
+.head-contact {
+    margin: 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
 
+.head-home {
+    margin: 4rem
+   }
 
-
+.fa-home {
+    color: var(--brand-color);
+}
