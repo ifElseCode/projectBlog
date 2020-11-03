@@ -22,8 +22,9 @@
 		<td><%= blog.author %></td>
 		<td class="dashboard-blog-posts--actions">
 			<a
-				href="/dashboard/blogs/edit/<%= blog.id %>"
+				href="blogs/<%= blog.id %>"
 				class="dashboard-blog-posts--button dashboard-blog-posts--button__green"
+				data-doc="<%= blog.id %>"
 				>Edit</a
 			>
 			<form
