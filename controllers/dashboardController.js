@@ -58,7 +58,7 @@ const dashboard_blogs_create_post = async (req, res) => {
 }
 
 const dashboard_blogs_delete = async (req, res) => {
-  Blog.findByIdAndUpdate(req.params.id)
+  Blog.findByIdAndDelete(req.params.id)
     .then(result => res.json())
     .catch(err => console.log(err));  
 }
