@@ -58,8 +58,15 @@ const dashboard_blogs_create_post = async (req, res) => {
 }
 
 const dashboard_blogs_delete = async (req, res) => {
-  Blog.findByIdAndDelete(req.params.id)
+  Blog.findByIdAndUpdate(req.params.id)
     .then(result => res.json())
+    .catch(err => console.log(err));  
+}
+
+const dashboard_blogs_patch = async (req, res) => {
+  const id = req.params.id;
+  Blog.findByIdAndUpdate(id)
+    .then(result => res.json({ redirect: "/dashboard/blogs" }))
     .catch(err => console.log(err));  
 }
 
@@ -72,5 +79,6 @@ module.exports = {
   dashboard_blogs_get,
   dashboard_blogs_create_get,
   dashboard_blogs_create_post,
-  dashboard_blogs_delete
+  dashboard_blogs_delete,
+  dashboard_blogs_patch
 }
