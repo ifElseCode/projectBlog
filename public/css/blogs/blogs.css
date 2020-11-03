@@ -1,4 +1,4 @@
-/* Styles for header */
+/*
 .blogs--header {
 	height: 9rem;
 	border-bottom: 1px dashed var(--grey);
@@ -18,12 +18,10 @@
 	color: var(--brand-color);
 }
 
-/* Style for blogss container */
 .blogs--container {
 	padding: 0 2.5rem;
 }
 
-/* Styles for each individual blogs block */
 .blogs--blog {
 	padding: 4rem 0;
 }
@@ -79,4 +77,144 @@
 }
 .blogs--content > p:last-child {
 	margin-bottom: 0;
+} */
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+ /* No media query for `xs` since this is the default in Bootstrap */
+ .blogs--header {
+	height: 8rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2.5rem;
+	border-bottom: 1px dashed var(--grey);
+}
+
+.blogs--header > h1 {
+	font-size: 2.1rem;
+	line-height: 1.524;
+	font-weight: 500;
+}
+
+.blogs--header > i {
+	font-size: 2.6rem;
+	color: var(--brand-color);
+}
+
+.blogs--container {
+	padding: 0 2.5rem;
+}
+
+.blogs--blog {
+	padding: 4rem 0;
+}
+
+.blogs--image {
+	max-height: 628px;
+	width: 100%;
+}
+
+.blogs--title {
+	font-size: 2.1rem;
+	font-weight: 600;
+	line-height: 1.524;
+	margin: 1.5rem 0;
+}
+
+.blogs--info {
+	font-size: 1.3rem;
+	line-height: 1.615;
+	color: var(--grey);
+}
+
+.blogs--info > span {
+	color: var(--brand-color);
+}
+
+.blogs--content > p {
+	color: var(--grey);
+	font-size: 1.3rem;
+	line-height: 1.615;
+	margin: 1.5rem 0;
+}
+
+.blogs--link {
+	font-size: 1.3rem;
+	line-height: 1.615;
+	color: var(--brand-color);
+}
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 	
+	.blogs--header > h1 {
+		font-size: 2.6rem;
+		line-height: 1.577;
+	}
+
+	.blogs--header > i {
+		font-size: 3.1rem;
+	}
+
+	.blogs--title {
+		font-size: 2.6rem;
+		line-height: 1.577;
+	}
+
+	.blogs--info {
+		font-size: 1.6rem;
+		line-height: 1.625;
+	}
+	
+	.blogs--content > p {
+		font-size: 1.6rem;
+		line-height: 1.625;
+	}
+	
+	.blogs--link {
+		font-size: 1.6rem;
+		line-height: 1.625;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+	.blogs--header > h1 {
+		font-size: 3rem;
+		line-height: 1.977;
+	}
+
+	.blogs--header > i {
+		font-size: 3.5rem;
+	}
+
+	.blogs--title {
+		font-size: 3rem;
+		line-height: 1.977;
+	}
+
+	.blogs--info {
+		font-size: 2.1rem;
+		line-height: 1.714;
+	}
+	
+	.blogs--content > p {
+		font-size: 2.1rem;
+		line-height: 1.714;
+	}
+	
+	.blogs--link {
+		font-size: 2.1rem;
+		line-height: 1.714;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
 }
