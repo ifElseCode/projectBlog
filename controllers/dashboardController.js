@@ -66,7 +66,7 @@ const dashboard_blogs_delete = async (req, res) => {
 const dashboard_blogs_patch = async (req, res) => {
   const id = req.params.id;
   Blog.findByIdAndUpdate(id)
-    .then(result => res.json({ redirect: "/dashboard/blogs" }))
+    .then(result => res.json({ redirect: "/dashboard/edit-blog" }))
     .catch(err => console.log(err));  
 }
 
