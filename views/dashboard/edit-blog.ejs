@@ -1,0 +1,26 @@
+<div class="dashboard-blog-posts--header">
+	<h1 class="dashboard-blog-posts--title">Create New Blog Post</h1>
+	<a href="/dashboard/blogs/">
+		<i class="fas fa-arrow-left"></i>
+		Go Back
+	</a>
+</div>
+<form class="dashboard-blog-post--form" data-doc="<%= user.username %>">
+    <% blogs.forEach(blog => { %>
+        <tr>
+            <td><%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %></td>
+            <td><%= blog.title %></td>
+            <td><%= blog.author %></td>
+            <td class="dashboard-blog-posts--actions">
+	<input type="text" name="title" required placeholder="Blog post title" />
+	<textarea
+		type="password"
+		name="content"
+		required
+		rows="15"
+		placeholder="Blog post content..."
+	></textarea>
+	<button type="submit">Edit</button>
+</form>
+
+<script src="/js/blogs-create.js"></script>

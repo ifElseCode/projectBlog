@@ -69,6 +69,6 @@ const blog_like_patch = (req, res) => {
 
 module.exports = {
 	blogs_get,
-  blog_get,
-  blog_like_patch
+	blog_get,
+	blog_like_patch
 }
