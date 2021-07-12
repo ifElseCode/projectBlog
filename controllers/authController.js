@@ -53,7 +53,7 @@ const signup_post = async (req, res) => {
         console.log(err)
       } else {
         transporter.sendMail({
-          from: "ifelsecode.verify@gmail.com",
+          from: "iecauth@gmail.com",
           to: email,
           subject: `Email Confirmation for ${username}`,
           html: data
