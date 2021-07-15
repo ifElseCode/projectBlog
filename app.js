@@ -6,7 +6,7 @@ require("dotenv/config");
 const cookieParser = require("cookie-parser");
 const authMiddleware = require("./middleware/authMiddleware");
 const Blog = require("./models/blog");
-
+const morgan = require('morgan')
 const expressLayouts = require("express-ejs-layouts");
 const aboutRouter = require("./routes/aboutRouter");
 const blogRouter = require("./routes/blogRouter");
@@ -14,10 +14,12 @@ const authRouter = require("./routes/authRouter");
 const dashboardRouter = require("./routes/dashboardRouter");
 
 // Middleware
+app.use(morgan('dev'))
 app.use(expressLayouts);
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
 
 // View Engines
 app.set("view engine", "ejs");
@@ -63,4 +65,4 @@ app.use("/dashboard", dashboardRouter);
 
 
 // 404 error
-app.use((req, res) => res.render("404"));
+// app.use((req, res) => res.render("404"));

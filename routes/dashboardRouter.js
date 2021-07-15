@@ -9,8 +9,9 @@ dashboardRouter.patch("/users/admin/:id", dashboardController.dashboard_users_ad
 dashboardRouter.patch("/users/author/:id", dashboardController.dashboard_users_author_patch);
 dashboardRouter.get("/blogs", dashboardController.dashboard_blogs_get);
 dashboardRouter.get("/blogs/create", dashboardController.dashboard_blogs_create_get);
-dashboardRouter.post("/blogs/create", dashboardController.dashboard_blogs_create_post); 
+dashboardRouter.post("/blogs/create", dashboardController.dashboard_blogs_create_post);
 dashboardRouter.delete("/blogs/:id", dashboardController.dashboard_blogs_delete);
-dashboardRouter.patch("/blogs/:id", dashboardController.dashboard_blogs_patch);
+dashboardRouter.get("/edit-blog/:id", dashboardController.dashboard_blogs_edit);
+dashboardRouter.post("/edit-blog/:id/edit", dashboardController.dashboard_blogs_patch);
 
 module.exports = dashboardRouter;

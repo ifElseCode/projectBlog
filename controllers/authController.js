@@ -53,7 +53,7 @@ const signup_post = async (req, res) => {
         console.log(err)
       } else {
         transporter.sendMail({
-          from: "ifelsecode.verify@gmail.com",
+          from: "iecauth@gmail.com",
           to: email,
           subject: `Email Confirmation for ${username}`,
           html: data
@@ -91,7 +91,7 @@ const signup_uniqueNumber_get = async (req, res) => {
           res.status(201).redirect("/");
         })
         .catch(err => console.log(err));
-      
+
     } else {
       res.send("USER NOT FOUND! Aaaaah!");
     }

@@ -5,22 +5,13 @@
 		Go Back
 	</a>
 </div>
-<form class="dashboard-blog-post--form" data-doc="<%= user.username %>">
-    <% blogs.forEach(blog => { %>
-        <tr>
-            <td><%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %></td>
-            <td><%= blog.title %></td>
-            <td><%= blog.author %></td>
-            <td class="dashboard-blog-posts--actions">
-	<input type="text" name="title" required placeholder="Blog post title" />
-	<textarea
-		type="password"
-		name="content"
-		required
-		rows="15"
-		placeholder="Blog post content..."
-	></textarea>
+<form action="/dashboard/edit-blog/<%= `${blog._id}` %>/edit" class="dashboard-blog-post--form" method="POST">
+
+	<input type="text" name="blog[title]" id="title" required placeholder="Blog post title"
+		value="<%= `${blog.title}` %>" />
+	<textarea name="blog[content]" required rows="15" placeholder="Blog post content..."
+		id="content"><%=`${blog.content}`%></textarea>
 	<button type="submit">Edit</button>
 </form>
 
-<script src="/js/blogs-create.js"></script>
+<!-- <script src="/js/blogs-create.js"></script> -->
