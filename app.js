@@ -65,4 +65,4 @@ app.use("/dashboard", dashboardRouter);
 
 
 // 404 error
-// app.use((req, res) => res.render("404"));
+app.use((req, res) => res.render("404"));
