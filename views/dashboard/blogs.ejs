@@ -15,26 +15,26 @@
 		<th>Author</th>
 		<th>Actions</th>
 	</tr>
-	<% blogs.forEach(blog => { %>
-	<tr>
-		<td><%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %></td>
-		<td><%= blog.title %></td>
-		<td><%= blog.author %></td>
-		<td class="dashboard-blog-posts--actions">
-			<a
-				href="/dashboard/blogs/edit/<%= blog.id %>"
-				class="dashboard-blog-posts--button dashboard-blog-posts--button__green"
-				>Edit</a
-			>
-			<form
-				class="dashboard-blog-posts--button dashboard-blog-posts--button__red"
-				data-doc="<%= blog.id %>"
-			>
-				Delete
-			</form>
-		</td>
-	</tr>
-	<% }) %>
+	<% blogs.forEach(blog=> { %>
+		<tr>
+			<td>
+				<%= `${blog.date.getDate()} ${months[blog.date.getMonth()]} ${blog.date.getFullYear()}` %>
+			</td>
+			<td>
+				<%= blog.title %>
+			</td>
+			<td>
+				<%= blog.author %>
+			</td>
+			<td class="dashboard-blog-posts--actions">
+				<a class="dashboard-blog-posts--button dashboard-blog-posts--button__green" data-doc="<%= blog.id %>"
+					href="/dashboard/edit-blog/<%= blog.id %>">Edit</a>
+				<form class="dashboard-blog-posts--button dashboard-blog-posts--button__red" data-doc="<%= blog.id %>">
+					Delete
+				</form>
+			</td>
+		</tr>
+		<% }) %>
 </table>
 
 <script src="/js/delete-blog.js"></script>

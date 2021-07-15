@@ -17,7 +17,7 @@ const dashboard_users_get = async (req, res) => {
 const dashboard_users_delete = (req, res) => {
   const id = req.params.id;
   User.findByIdAndDelete(id)
-    .then(result => res.json({ redirect: "/dashboard/users" } ))
+    .then(result => res.json({ redirect: "/dashboard/users" }))
     .catch(err => console.log(err));
 }
 
@@ -25,10 +25,11 @@ const dashboard_users_admin_patch = (req, res) => {
   const id = req.params.id;
   User.findByIdAndUpdate(id, { role: { admin: true } })
     .then(result => res.json({ redirect: "/dashboard/users" }))
-    .catch(err => console.log(err)); 
+    .catch(err => console.log(err));
 }
 
 const dashboard_users_author_patch = (req, res) => {
+  console.log("Something isn't happening?");
   const id = req.params.id;
   User.findByIdAndUpdate(id, { role: { author: true } })
     .then(result => res.json({ redirect: "/dashboard/users" }))
@@ -39,7 +40,7 @@ const dashboard_blogs_get = async (req, res) => {
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   try {
     const blogs = await Blog.find().sort({ date: -1 });
-    res.render("dashboard/blogs.ejs", { layout: "./layouts/dashboard-layout", blogs, months } );
+    res.render("dashboard/blogs.ejs", { layout: "./layouts/dashboard-layout", blogs, months });
   }
   catch (err) {
     console.log(err);
@@ -52,7 +53,7 @@ const dashboard_blogs_create_post = async (req, res) => {
   try {
     await Blog.create(req.body);
   }
-  catch(err) {
+  catch (err) {
     console.log(err);
   }
 }
@@ -60,7 +61,25 @@ const dashboard_blogs_create_post = async (req, res) => {
 const dashboard_blogs_delete = async (req, res) => {
   Blog.findByIdAndDelete(req.params.id)
     .then(result => res.json())
-    .catch(err => console.log(err));  
+    .catch(err => console.log(err));
+}
+
+
+const dashboard_blogs_edit = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const blogInfo = await Blog.findById(id);
+    res.render("dashboard/edit-blog", { layout: "./layouts/dashboard-layout", blog: blogInfo });
+  }
+  catch (err) {
+    console.log(err);
+  }
+}
+const dashboard_blogs_patch = async (req, res) => {
+  const id = req.params.id;
+  Blog.findByIdAndUpdate(id, { ...req.body.blog })
+    .then(result => res.redirect("/dashboard/blogs/"))
+    .catch(err => console.log(err));
 }
 
 module.exports = {
@@ -72,5 +91,7 @@ module.exports = {
   dashboard_blogs_get,
   dashboard_blogs_create_get,
   dashboard_blogs_create_post,
-  dashboard_blogs_delete
+  dashboard_blogs_delete,
+  dashboard_blogs_patch,
+  dashboard_blogs_edit
 }
